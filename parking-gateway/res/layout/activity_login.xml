@@ -32,8 +32,6 @@
 	    <Button android:layout_width="300dp"
 	        	android:layout_height="wrap_content"
 	        	android:id="@+id/login_button"
-	        	android:textColor="#FFA5A5A5"
-	        	android:textStyle="bold"
 	        	android:text="@string/login_button" />
 	    
 	    <ImageView android:id="@+id/setting"
