@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="เครือข่าย" >
+        <EditTextPreference
+            android:key="com.may.ple.restaurant.webservice.url"
+            android:title="WS URL" />
+        <EditTextPreference
+            android:key="com.may.ple.restaurant.websocket.url"
+            android:title="WBS URL" />
+
+        <!-- android:summary="http://192.168.1.100:8080/jsfproject/rest" -->
+        <!-- android:summary="ws://192.168.1.100:8787" -->
+    </PreferenceCategory>
+    <PreferenceCategory android:title="แสดงรายการอาหารขายดี" >
+        <EditTextPreference
+            android:defaultValue="5"
+            android:key="com.may.ple.restaurant.likeorder.rownum"
+            android:title="จำนวน" />
+        <EditTextPreference
+            android:defaultValue="30"
+            android:key="com.may.ple.restaurant.likeorder.lastday"
+            android:title="ข้อมูลย้อนหลัง" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
