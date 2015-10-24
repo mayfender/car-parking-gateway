@@ -22,7 +22,7 @@
 	              android:layout_height="wrap_content" />
     
 	    <EditText android:layout_width="match_parent"
-	        	  android:id="@+id/pass"
+	        	  android:id="@+id/password"
 	        	  android:hint="@string/pass"
 	        	  android:textColorHint="#D2D2D2"
 	        	  android:inputType="textPassword"

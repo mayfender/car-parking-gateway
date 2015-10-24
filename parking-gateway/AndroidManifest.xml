@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.may.ple.parking.gateway"
+    package="com.may.ple.parking.gateway.activity"
     android:versionCode="1"
     android:versionName="1.0-SNAPSHOT" >
 
@@ -19,6 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <activity android:name=".GateSelectionActivity" />
         
         <activity android:name="com.may.ple.parking.gateway.setting.PreferenceActivitySetting"
 		    	  android:label="@string/action_settings" />

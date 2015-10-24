@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.may.ple.parking.gateway;
+package com.may.ple.parking.gateway.activity;
 
 public final class R {
     public static final class anim {
@@ -923,14 +923,15 @@ containing a value of this type.
         public static final int edittext_bg_focused=0x7f020074;
         public static final int edittext_bg_list=0x7f020075;
         public static final int edittext_cursor_color=0x7f020076;
-        public static final int ic_launcher=0x7f020077;
-        public static final int ic_launcher_settings=0x7f020078;
-        public static final int login_bg=0x7f020079;
-        public static final int settings_icon=0x7f02007a;
-        public static final int tab_bar_bg=0x7f02007b;
-        public static final int tab_bg=0x7f02007c;
-        public static final int tab_indicator=0x7f02007d;
-        public static final int tab_view_bg=0x7f02007e;
+        public static final int gateway_btn=0x7f020077;
+        public static final int ic_launcher=0x7f020078;
+        public static final int ic_launcher_settings=0x7f020079;
+        public static final int login_bg=0x7f02007a;
+        public static final int settings_icon=0x7f02007b;
+        public static final int tab_bar_bg=0x7f02007c;
+        public static final int tab_bg=0x7f02007d;
+        public static final int tab_indicator=0x7f02007e;
+        public static final int tab_view_bg=0x7f02007f;
     }
     public static final class id {
         public static final int abs__action_bar=0x7f0a0020;
@@ -972,22 +973,24 @@ containing a value of this type.
         public static final int abs__textButton=0x7f0a0013;
         public static final int abs__title=0x7f0a001b;
         public static final int abs__up=0x7f0a0001;
-        public static final int action_settings=0x7f0a0036;
-        public static final int button=0x7f0a0035;
+        public static final int action_settings=0x7f0a0038;
+        public static final int button=0x7f0a0037;
         public static final int disableHome=0x7f0a000a;
         public static final int edit_query=0x7f0a0026;
+        public static final int gatewayIn=0x7f0a0032;
+        public static final int gatewayOut=0x7f0a0033;
         public static final int homeAsUp=0x7f0a000b;
         public static final int listMode=0x7f0a0007;
-        public static final int login_button=0x7f0a0034;
-        public static final int menu_item_action_provider_action_bar=0x7f0a0037;
+        public static final int login_button=0x7f0a0036;
+        public static final int menu_item_action_provider_action_bar=0x7f0a0039;
         public static final int normal=0x7f0a0008;
-        public static final int pass=0x7f0a0033;
+        public static final int password=0x7f0a0035;
         public static final int showCustom=0x7f0a000c;
         public static final int showHome=0x7f0a000d;
         public static final int showTitle=0x7f0a000e;
         public static final int tabMode=0x7f0a0009;
         public static final int useLogo=0x7f0a000f;
-        public static final int user_name=0x7f0a0032;
+        public static final int user_name=0x7f0a0034;
         public static final int wrap_content=0x7f0a0006;
     }
     public static final class integer {
@@ -1015,10 +1018,11 @@ containing a value of this type.
         public static final int abs__search_dropdown_item_icons_2line=0x7f030012;
         public static final int abs__search_view=0x7f030013;
         public static final int abs__simple_dropdown_hint=0x7f030014;
-        public static final int activity_login=0x7f030015;
-        public static final int settings_action_provider=0x7f030016;
-        public static final int sherlock_spinner_dropdown_item=0x7f030017;
-        public static final int sherlock_spinner_item=0x7f030018;
+        public static final int gate_selection=0x7f030015;
+        public static final int login=0x7f030016;
+        public static final int settings_action_provider=0x7f030017;
+        public static final int sherlock_spinner_dropdown_item=0x7f030018;
+        public static final int sherlock_spinner_item=0x7f030019;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;
@@ -1217,26 +1221,26 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockActionBar_background com.may.ple.parking.gateway:background}</code></td><td> Specifies a background drawable for the action bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_backgroundSplit com.may.ple.parking.gateway:backgroundSplit}</code></td><td> Specifies a background drawable for the bottom component of a split action bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_backgroundStacked com.may.ple.parking.gateway:backgroundStacked}</code></td><td> Specifies a background drawable for a second stacked row of the action bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_customNavigationLayout com.may.ple.parking.gateway:customNavigationLayout}</code></td><td> Specifies a layout for custom navigation.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_displayOptions com.may.ple.parking.gateway:displayOptions}</code></td><td> Options affecting how the action bar is displayed.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_divider com.may.ple.parking.gateway:divider}</code></td><td> Specifies the drawable used for item dividers.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_height com.may.ple.parking.gateway:height}</code></td><td> Specifies a fixed height.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_homeLayout com.may.ple.parking.gateway:homeLayout}</code></td><td> Specifies a layout to use for the "home" section of the action bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_icon com.may.ple.parking.gateway:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_indeterminateProgressStyle com.may.ple.parking.gateway:indeterminateProgressStyle}</code></td><td> Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_itemPadding com.may.ple.parking.gateway:itemPadding}</code></td><td> Specifies padding that should be applied to the left and right sides of
+           <tr><td><code>{@link #SherlockActionBar_background com.may.ple.parking.gateway.activity:background}</code></td><td> Specifies a background drawable for the action bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_backgroundSplit com.may.ple.parking.gateway.activity:backgroundSplit}</code></td><td> Specifies a background drawable for the bottom component of a split action bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_backgroundStacked com.may.ple.parking.gateway.activity:backgroundStacked}</code></td><td> Specifies a background drawable for a second stacked row of the action bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_customNavigationLayout com.may.ple.parking.gateway.activity:customNavigationLayout}</code></td><td> Specifies a layout for custom navigation.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_displayOptions com.may.ple.parking.gateway.activity:displayOptions}</code></td><td> Options affecting how the action bar is displayed.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_divider com.may.ple.parking.gateway.activity:divider}</code></td><td> Specifies the drawable used for item dividers.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_height com.may.ple.parking.gateway.activity:height}</code></td><td> Specifies a fixed height.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_homeLayout com.may.ple.parking.gateway.activity:homeLayout}</code></td><td> Specifies a layout to use for the "home" section of the action bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_icon com.may.ple.parking.gateway.activity:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_indeterminateProgressStyle com.may.ple.parking.gateway.activity:indeterminateProgressStyle}</code></td><td> Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_itemPadding com.may.ple.parking.gateway.activity:itemPadding}</code></td><td> Specifies padding that should be applied to the left and right sides of
              system-provided items in the bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_logo com.may.ple.parking.gateway:logo}</code></td><td> Specifies the drawable used for the application logo.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_navigationMode com.may.ple.parking.gateway:navigationMode}</code></td><td> The type of navigation to use.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_progressBarPadding com.may.ple.parking.gateway:progressBarPadding}</code></td><td> Specifies the horizontal padding on either end for an embedded progress bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_progressBarStyle com.may.ple.parking.gateway:progressBarStyle}</code></td><td> Specifies a style resource to use for an embedded progress bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_subtitle com.may.ple.parking.gateway:subtitle}</code></td><td> Specifies subtitle text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #SherlockActionBar_subtitleTextStyle com.may.ple.parking.gateway:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
-           <tr><td><code>{@link #SherlockActionBar_title com.may.ple.parking.gateway:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #SherlockActionBar_titleTextStyle com.may.ple.parking.gateway:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_logo com.may.ple.parking.gateway.activity:logo}</code></td><td> Specifies the drawable used for the application logo.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_navigationMode com.may.ple.parking.gateway.activity:navigationMode}</code></td><td> The type of navigation to use.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_progressBarPadding com.may.ple.parking.gateway.activity:progressBarPadding}</code></td><td> Specifies the horizontal padding on either end for an embedded progress bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_progressBarStyle com.may.ple.parking.gateway.activity:progressBarStyle}</code></td><td> Specifies a style resource to use for an embedded progress bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_subtitle com.may.ple.parking.gateway.activity:subtitle}</code></td><td> Specifies subtitle text used for navigationMode="normal" </td></tr>
+           <tr><td><code>{@link #SherlockActionBar_subtitleTextStyle com.may.ple.parking.gateway.activity:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
+           <tr><td><code>{@link #SherlockActionBar_title com.may.ple.parking.gateway.activity:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
+           <tr><td><code>{@link #SherlockActionBar_titleTextStyle com.may.ple.parking.gateway.activity:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
            </table>
            @see #SherlockActionBar_background
            @see #SherlockActionBar_backgroundSplit
@@ -1276,7 +1280,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:background
+          @attr name com.may.ple.parking.gateway.activity:background
         */
         public static final int SherlockActionBar_background = 2;
         /**
@@ -1290,7 +1294,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:backgroundSplit
+          @attr name com.may.ple.parking.gateway.activity:backgroundSplit
         */
         public static final int SherlockActionBar_backgroundSplit = 3;
         /**
@@ -1304,7 +1308,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:backgroundStacked
+          @attr name com.may.ple.parking.gateway.activity:backgroundStacked
         */
         public static final int SherlockActionBar_backgroundStacked = 12;
         /**
@@ -1316,7 +1320,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:customNavigationLayout
+          @attr name com.may.ple.parking.gateway.activity:customNavigationLayout
         */
         public static final int SherlockActionBar_customNavigationLayout = 13;
         /**
@@ -1339,7 +1343,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>disableHome</code></td><td>0x20</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:displayOptions
+          @attr name com.may.ple.parking.gateway.activity:displayOptions
         */
         public static final int SherlockActionBar_displayOptions = 7;
         /**
@@ -1351,7 +1355,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:divider
+          @attr name com.may.ple.parking.gateway.activity:divider
         */
         public static final int SherlockActionBar_divider = 5;
         /**
@@ -1369,7 +1373,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:height
+          @attr name com.may.ple.parking.gateway.activity:height
         */
         public static final int SherlockActionBar_height = 4;
         /**
@@ -1381,7 +1385,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:homeLayout
+          @attr name com.may.ple.parking.gateway.activity:homeLayout
         */
         public static final int SherlockActionBar_homeLayout = 14;
         /**
@@ -1393,7 +1397,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:icon
+          @attr name com.may.ple.parking.gateway.activity:icon
         */
         public static final int SherlockActionBar_icon = 10;
         /**
@@ -1405,7 +1409,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:indeterminateProgressStyle
+          @attr name com.may.ple.parking.gateway.activity:indeterminateProgressStyle
         */
         public static final int SherlockActionBar_indeterminateProgressStyle = 16;
         /**
@@ -1424,7 +1428,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:itemPadding
+          @attr name com.may.ple.parking.gateway.activity:itemPadding
         */
         public static final int SherlockActionBar_itemPadding = 18;
         /**
@@ -1436,7 +1440,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:logo
+          @attr name com.may.ple.parking.gateway.activity:logo
         */
         public static final int SherlockActionBar_logo = 11;
         /**
@@ -1456,7 +1460,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>tabMode</code></td><td>2</td><td> The action bar will use a series of horizontal tabs for navigation. </td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:navigationMode
+          @attr name com.may.ple.parking.gateway.activity:navigationMode
         */
         public static final int SherlockActionBar_navigationMode = 6;
         /**
@@ -1474,7 +1478,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:progressBarPadding
+          @attr name com.may.ple.parking.gateway.activity:progressBarPadding
         */
         public static final int SherlockActionBar_progressBarPadding = 17;
         /**
@@ -1486,7 +1490,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:progressBarStyle
+          @attr name com.may.ple.parking.gateway.activity:progressBarStyle
         */
         public static final int SherlockActionBar_progressBarStyle = 15;
         /**
@@ -1502,7 +1506,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:subtitle
+          @attr name com.may.ple.parking.gateway.activity:subtitle
         */
         public static final int SherlockActionBar_subtitle = 9;
         /**
@@ -1514,7 +1518,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:subtitleTextStyle
+          @attr name com.may.ple.parking.gateway.activity:subtitleTextStyle
         */
         public static final int SherlockActionBar_subtitleTextStyle = 1;
         /**
@@ -1530,7 +1534,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:title
+          @attr name com.may.ple.parking.gateway.activity:title
         */
         public static final int SherlockActionBar_title = 8;
         /**
@@ -1542,7 +1546,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:titleTextStyle
+          @attr name com.may.ple.parking.gateway.activity:titleTextStyle
         */
         public static final int SherlockActionBar_titleTextStyle = 0;
         /** Attributes that can be used with a SherlockActionMenuItemView.
@@ -1570,11 +1574,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockActionMode_background com.may.ple.parking.gateway:background}</code></td><td> Specifies a background for the action mode bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionMode_backgroundSplit com.may.ple.parking.gateway:backgroundSplit}</code></td><td> Specifies a background for the split action mode bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionMode_height com.may.ple.parking.gateway:height}</code></td><td> Specifies a fixed height for the action mode bar.</td></tr>
-           <tr><td><code>{@link #SherlockActionMode_subtitleTextStyle com.may.ple.parking.gateway:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
-           <tr><td><code>{@link #SherlockActionMode_titleTextStyle com.may.ple.parking.gateway:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
+           <tr><td><code>{@link #SherlockActionMode_background com.may.ple.parking.gateway.activity:background}</code></td><td> Specifies a background for the action mode bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionMode_backgroundSplit com.may.ple.parking.gateway.activity:backgroundSplit}</code></td><td> Specifies a background for the split action mode bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionMode_height com.may.ple.parking.gateway.activity:height}</code></td><td> Specifies a fixed height for the action mode bar.</td></tr>
+           <tr><td><code>{@link #SherlockActionMode_subtitleTextStyle com.may.ple.parking.gateway.activity:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
+           <tr><td><code>{@link #SherlockActionMode_titleTextStyle com.may.ple.parking.gateway.activity:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
            </table>
            @see #SherlockActionMode_background
            @see #SherlockActionMode_backgroundSplit
@@ -1597,7 +1601,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:background
+          @attr name com.may.ple.parking.gateway.activity:background
         */
         public static final int SherlockActionMode_background = 2;
         /**
@@ -1611,7 +1615,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:backgroundSplit
+          @attr name com.may.ple.parking.gateway.activity:backgroundSplit
         */
         public static final int SherlockActionMode_backgroundSplit = 3;
         /**
@@ -1629,7 +1633,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:height
+          @attr name com.may.ple.parking.gateway.activity:height
         */
         public static final int SherlockActionMode_height = 4;
         /**
@@ -1641,7 +1645,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:subtitleTextStyle
+          @attr name com.may.ple.parking.gateway.activity:subtitleTextStyle
         */
         public static final int SherlockActionMode_subtitleTextStyle = 1;
         /**
@@ -1653,7 +1657,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:titleTextStyle
+          @attr name com.may.ple.parking.gateway.activity:titleTextStyle
         */
         public static final int SherlockActionMode_titleTextStyle = 0;
         /** Attributes that can be used with a SherlockActivityChooserView.
@@ -1663,8 +1667,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
            <tr><td><code>{@link #SherlockActivityChooserView_android_background android:background}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockActivityChooserView_expandActivityOverflowButtonDrawable com.may.ple.parking.gateway:expandActivityOverflowButtonDrawable}</code></td><td> The drawable to show in the button for expanding the activities overflow popup.</td></tr>
-           <tr><td><code>{@link #SherlockActivityChooserView_initialActivityCount com.may.ple.parking.gateway:initialActivityCount}</code></td><td> The maximal number of items initially shown in the activity list.</td></tr>
+           <tr><td><code>{@link #SherlockActivityChooserView_expandActivityOverflowButtonDrawable com.may.ple.parking.gateway.activity:expandActivityOverflowButtonDrawable}</code></td><td> The drawable to show in the button for expanding the activities overflow popup.</td></tr>
+           <tr><td><code>{@link #SherlockActivityChooserView_initialActivityCount com.may.ple.parking.gateway.activity:initialActivityCount}</code></td><td> The maximal number of items initially shown in the activity list.</td></tr>
            </table>
            @see #SherlockActivityChooserView_android_background
            @see #SherlockActivityChooserView_expandActivityOverflowButtonDrawable
@@ -1693,7 +1697,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:expandActivityOverflowButtonDrawable
+          @attr name com.may.ple.parking.gateway.activity:expandActivityOverflowButtonDrawable
         */
         public static final int SherlockActivityChooserView_expandActivityOverflowButtonDrawable = 2;
         /**
@@ -1709,7 +1713,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:initialActivityCount
+          @attr name com.may.ple.parking.gateway.activity:initialActivityCount
         */
         public static final int SherlockActivityChooserView_initialActivityCount = 1;
         /**  Base attributes that are available to all groups. 
@@ -2018,14 +2022,14 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockMenuView_headerBackground com.may.ple.parking.gateway:headerBackground}</code></td><td> Default background for the menu header.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_horizontalDivider com.may.ple.parking.gateway:horizontalDivider}</code></td><td> Default horizontal divider between rows of menu items.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_itemBackground com.may.ple.parking.gateway:itemBackground}</code></td><td> Default background for each menu item.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_itemIconDisabledAlpha com.may.ple.parking.gateway:itemIconDisabledAlpha}</code></td><td> Default disabled icon alpha for each menu item that shows an icon.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_itemTextAppearance com.may.ple.parking.gateway:itemTextAppearance}</code></td><td> Default appearance of menu item text.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_preserveIconSpacing com.may.ple.parking.gateway:preserveIconSpacing}</code></td><td> Whether space should be reserved in layout when an icon is missing.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_verticalDivider com.may.ple.parking.gateway:verticalDivider}</code></td><td> Default vertical divider between menu items.</td></tr>
-           <tr><td><code>{@link #SherlockMenuView_windowAnimationStyle com.may.ple.parking.gateway:windowAnimationStyle}</code></td><td> Default animations for the menu.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_headerBackground com.may.ple.parking.gateway.activity:headerBackground}</code></td><td> Default background for the menu header.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_horizontalDivider com.may.ple.parking.gateway.activity:horizontalDivider}</code></td><td> Default horizontal divider between rows of menu items.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_itemBackground com.may.ple.parking.gateway.activity:itemBackground}</code></td><td> Default background for each menu item.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_itemIconDisabledAlpha com.may.ple.parking.gateway.activity:itemIconDisabledAlpha}</code></td><td> Default disabled icon alpha for each menu item that shows an icon.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_itemTextAppearance com.may.ple.parking.gateway.activity:itemTextAppearance}</code></td><td> Default appearance of menu item text.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_preserveIconSpacing com.may.ple.parking.gateway.activity:preserveIconSpacing}</code></td><td> Whether space should be reserved in layout when an icon is missing.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_verticalDivider com.may.ple.parking.gateway.activity:verticalDivider}</code></td><td> Default vertical divider between menu items.</td></tr>
+           <tr><td><code>{@link #SherlockMenuView_windowAnimationStyle com.may.ple.parking.gateway.activity:windowAnimationStyle}</code></td><td> Default animations for the menu.</td></tr>
            </table>
            @see #SherlockMenuView_headerBackground
            @see #SherlockMenuView_horizontalDivider
@@ -2051,7 +2055,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:headerBackground
+          @attr name com.may.ple.parking.gateway.activity:headerBackground
         */
         public static final int SherlockMenuView_headerBackground = 3;
         /**
@@ -2063,7 +2067,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:horizontalDivider
+          @attr name com.may.ple.parking.gateway.activity:horizontalDivider
         */
         public static final int SherlockMenuView_horizontalDivider = 1;
         /**
@@ -2077,7 +2081,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:itemBackground
+          @attr name com.may.ple.parking.gateway.activity:itemBackground
         */
         public static final int SherlockMenuView_itemBackground = 4;
         /**
@@ -2093,7 +2097,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:itemIconDisabledAlpha
+          @attr name com.may.ple.parking.gateway.activity:itemIconDisabledAlpha
         */
         public static final int SherlockMenuView_itemIconDisabledAlpha = 6;
         /**
@@ -2105,7 +2109,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:itemTextAppearance
+          @attr name com.may.ple.parking.gateway.activity:itemTextAppearance
         */
         public static final int SherlockMenuView_itemTextAppearance = 0;
         /**
@@ -2121,7 +2125,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:preserveIconSpacing
+          @attr name com.may.ple.parking.gateway.activity:preserveIconSpacing
         */
         public static final int SherlockMenuView_preserveIconSpacing = 7;
         /**
@@ -2133,7 +2137,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:verticalDivider
+          @attr name com.may.ple.parking.gateway.activity:verticalDivider
         */
         public static final int SherlockMenuView_verticalDivider = 2;
         /**
@@ -2145,7 +2149,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:windowAnimationStyle
+          @attr name com.may.ple.parking.gateway.activity:windowAnimationStyle
         */
         public static final int SherlockMenuView_windowAnimationStyle = 5;
         /** Attributes that can be used with a SherlockSearchView.
@@ -2157,8 +2161,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <tr><td><code>{@link #SherlockSearchView_android_imeOptions android:imeOptions}</code></td><td> The IME options to set on the query text field.</td></tr>
            <tr><td><code>{@link #SherlockSearchView_android_inputType android:inputType}</code></td><td> The input type to set on the query text field.</td></tr>
            <tr><td><code>{@link #SherlockSearchView_android_maxWidth android:maxWidth}</code></td><td> An optional maximum width of the SearchView.</td></tr>
-           <tr><td><code>{@link #SherlockSearchView_iconifiedByDefault com.may.ple.parking.gateway:iconifiedByDefault}</code></td><td> The default state of the SearchView.</td></tr>
-           <tr><td><code>{@link #SherlockSearchView_queryHint com.may.ple.parking.gateway:queryHint}</code></td><td> An optional query hint string to be displayed in the empty query field.</td></tr>
+           <tr><td><code>{@link #SherlockSearchView_iconifiedByDefault com.may.ple.parking.gateway.activity:iconifiedByDefault}</code></td><td> The default state of the SearchView.</td></tr>
+           <tr><td><code>{@link #SherlockSearchView_queryHint com.may.ple.parking.gateway.activity:queryHint}</code></td><td> An optional query hint string to be displayed in the empty query field.</td></tr>
            </table>
            @see #SherlockSearchView_android_imeOptions
            @see #SherlockSearchView_android_inputType
@@ -2211,7 +2215,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:iconifiedByDefault
+          @attr name com.may.ple.parking.gateway.activity:iconifiedByDefault
         */
         public static final int SherlockSearchView_iconifiedByDefault = 3;
         /**
@@ -2227,7 +2231,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:queryHint
+          @attr name com.may.ple.parking.gateway.activity:queryHint
         */
         public static final int SherlockSearchView_queryHint = 4;
         /** Attributes that can be used with a SherlockSpinner.
@@ -2342,77 +2346,77 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarDivider com.may.ple.parking.gateway:actionBarDivider}</code></td><td> Custom divider drawable to use for elements in the action bar.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarItemBackground com.may.ple.parking.gateway:actionBarItemBackground}</code></td><td> Custom item state list drawable background for action bar items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarSize com.may.ple.parking.gateway:actionBarSize}</code></td><td> Size of the Action Bar, including the contextual
+           <tr><td><code>{@link #SherlockTheme_actionBarDivider com.may.ple.parking.gateway.activity:actionBarDivider}</code></td><td> Custom divider drawable to use for elements in the action bar.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarItemBackground com.may.ple.parking.gateway.activity:actionBarItemBackground}</code></td><td> Custom item state list drawable background for action bar items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarSize com.may.ple.parking.gateway.activity:actionBarSize}</code></td><td> Size of the Action Bar, including the contextual
              bar used to present Action Modes.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarSplitStyle com.may.ple.parking.gateway:actionBarSplitStyle}</code></td><td> Reference to a style for the split Action Bar.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarStyle com.may.ple.parking.gateway:actionBarStyle}</code></td><td> Reference to a style for the Action Bar </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarTabBarStyle com.may.ple.parking.gateway:actionBarTabBarStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarTabStyle com.may.ple.parking.gateway:actionBarTabStyle}</code></td><td> Default style for tabs within an action bar </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarTabTextStyle com.may.ple.parking.gateway:actionBarTabTextStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionBarWidgetTheme com.may.ple.parking.gateway:actionBarWidgetTheme}</code></td><td> Reference to a theme that should be used to inflate widgets
+           <tr><td><code>{@link #SherlockTheme_actionBarSplitStyle com.may.ple.parking.gateway.activity:actionBarSplitStyle}</code></td><td> Reference to a style for the split Action Bar.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarStyle com.may.ple.parking.gateway.activity:actionBarStyle}</code></td><td> Reference to a style for the Action Bar </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarTabBarStyle com.may.ple.parking.gateway.activity:actionBarTabBarStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarTabStyle com.may.ple.parking.gateway.activity:actionBarTabStyle}</code></td><td> Default style for tabs within an action bar </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarTabTextStyle com.may.ple.parking.gateway.activity:actionBarTabTextStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionBarWidgetTheme com.may.ple.parking.gateway.activity:actionBarWidgetTheme}</code></td><td> Reference to a theme that should be used to inflate widgets
              and layouts destined for the action bar.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionButtonStyle com.may.ple.parking.gateway:actionButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionDropDownStyle com.may.ple.parking.gateway:actionDropDownStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionMenuTextAppearance com.may.ple.parking.gateway:actionMenuTextAppearance}</code></td><td> TextAppearance style that will be applied to text that
+           <tr><td><code>{@link #SherlockTheme_actionButtonStyle com.may.ple.parking.gateway.activity:actionButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionDropDownStyle com.may.ple.parking.gateway.activity:actionDropDownStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionMenuTextAppearance com.may.ple.parking.gateway.activity:actionMenuTextAppearance}</code></td><td> TextAppearance style that will be applied to text that
              appears within action menu items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionMenuTextColor com.may.ple.parking.gateway:actionMenuTextColor}</code></td><td> Color for text that appears within action menu items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeBackground com.may.ple.parking.gateway:actionModeBackground}</code></td><td> Background drawable to use for action mode UI </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeCloseButtonStyle com.may.ple.parking.gateway:actionModeCloseButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeCloseDrawable com.may.ple.parking.gateway:actionModeCloseDrawable}</code></td><td> Drawable to use for the close action mode button </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModePopupWindowStyle com.may.ple.parking.gateway:actionModePopupWindowStyle}</code></td><td> PopupWindow style to use for action modes when showing as a window overlay.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeShareDrawable com.may.ple.parking.gateway:actionModeShareDrawable}</code></td><td> Drawable to use for the Share action button in WebView selection action modes </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeSplitBackground com.may.ple.parking.gateway:actionModeSplitBackground}</code></td><td> Background drawable to use for action mode UI in the lower split bar </td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionModeStyle com.may.ple.parking.gateway:actionModeStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionOverflowButtonStyle com.may.ple.parking.gateway:actionOverflowButtonStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_actionSpinnerItemStyle com.may.ple.parking.gateway:actionSpinnerItemStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_activatedBackgroundIndicator com.may.ple.parking.gateway:activatedBackgroundIndicator}</code></td><td> Drawable used as a background for activated items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_activityChooserViewStyle com.may.ple.parking.gateway:activityChooserViewStyle}</code></td><td> Default ActivityChooserView style.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_buttonStyleSmall com.may.ple.parking.gateway:buttonStyleSmall}</code></td><td> Small Button style.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_dividerVertical com.may.ple.parking.gateway:dividerVertical}</code></td><td> Drawable to use for generic vertical dividers.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_dropDownHintAppearance com.may.ple.parking.gateway:dropDownHintAppearance}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_dropDownListViewStyle com.may.ple.parking.gateway:dropDownListViewStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_dropdownListPreferredItemHeight com.may.ple.parking.gateway:dropdownListPreferredItemHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_homeAsUpIndicator com.may.ple.parking.gateway:homeAsUpIndicator}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_listPopupWindowStyle com.may.ple.parking.gateway:listPopupWindowStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_listPreferredItemHeightSmall com.may.ple.parking.gateway:listPreferredItemHeightSmall}</code></td><td> A smaller, sleeker list item height.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_listPreferredItemPaddingLeft com.may.ple.parking.gateway:listPreferredItemPaddingLeft}</code></td><td> The preferred padding along the left edge of list items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_listPreferredItemPaddingRight com.may.ple.parking.gateway:listPreferredItemPaddingRight}</code></td><td> The preferred padding along the right edge of list items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_popupMenuStyle com.may.ple.parking.gateway:popupMenuStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchAutoCompleteTextView com.may.ple.parking.gateway:searchAutoCompleteTextView}</code></td><td> SearchView AutoCompleteTextView style </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchDropdownBackground com.may.ple.parking.gateway:searchDropdownBackground}</code></td><td> SearchView dropdown background </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchResultListItemHeight com.may.ple.parking.gateway:searchResultListItemHeight}</code></td><td> The list item height for search results.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewCloseIcon com.may.ple.parking.gateway:searchViewCloseIcon}</code></td><td> SearchView close button icon </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewEditQuery com.may.ple.parking.gateway:searchViewEditQuery}</code></td><td> SearchView query refinement icon </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewEditQueryBackground com.may.ple.parking.gateway:searchViewEditQueryBackground}</code></td><td> SearchView query refinement icon background </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewGoIcon com.may.ple.parking.gateway:searchViewGoIcon}</code></td><td> SearchView Go button icon </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewSearchIcon com.may.ple.parking.gateway:searchViewSearchIcon}</code></td><td> SearchView Search icon </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewTextField com.may.ple.parking.gateway:searchViewTextField}</code></td><td> SearchView text field background for the left section </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewTextFieldRight com.may.ple.parking.gateway:searchViewTextFieldRight}</code></td><td> SearchView text field background for the right section </td></tr>
-           <tr><td><code>{@link #SherlockTheme_searchViewVoiceIcon com.may.ple.parking.gateway:searchViewVoiceIcon}</code></td><td> SearchView Voice button icon </td></tr>
-           <tr><td><code>{@link #SherlockTheme_selectableItemBackground com.may.ple.parking.gateway:selectableItemBackground}</code></td><td> Background drawable for standalone items that need focus/pressed states.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_spinnerDropDownItemStyle com.may.ple.parking.gateway:spinnerDropDownItemStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_spinnerItemStyle com.may.ple.parking.gateway:spinnerItemStyle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceLargePopupMenu com.may.ple.parking.gateway:textAppearanceLargePopupMenu}</code></td><td> Text color, typeface, size, and style for the text inside of a popup menu.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceListItemSmall com.may.ple.parking.gateway:textAppearanceListItemSmall}</code></td><td> The preferred TextAppearance for the primary text of small list items.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceSearchResultSubtitle com.may.ple.parking.gateway:textAppearanceSearchResultSubtitle}</code></td><td> Text color, typeface, size, and style for system search result subtitle.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceSearchResultTitle com.may.ple.parking.gateway:textAppearanceSearchResultTitle}</code></td><td> Text color, typeface, size, and style for system search result title.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceSmall com.may.ple.parking.gateway:textAppearanceSmall}</code></td><td> Text color, typeface, size, and style for "small" text.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textAppearanceSmallPopupMenu com.may.ple.parking.gateway:textAppearanceSmallPopupMenu}</code></td><td> Text color, typeface, size, and style for small text inside of a popup menu.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_textColorPrimary com.may.ple.parking.gateway:textColorPrimary}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_textColorPrimaryDisableOnly com.may.ple.parking.gateway:textColorPrimaryDisableOnly}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_textColorPrimaryInverse com.may.ple.parking.gateway:textColorPrimaryInverse}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_textColorSearchUrl com.may.ple.parking.gateway:textColorSearchUrl}</code></td><td> Text color for urls in search suggestions, used by things like global search and the browser.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowActionBar com.may.ple.parking.gateway:windowActionBar}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowActionBarOverlay com.may.ple.parking.gateway:windowActionBarOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowActionModeOverlay com.may.ple.parking.gateway:windowActionModeOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowContentOverlay com.may.ple.parking.gateway:windowContentOverlay}</code></td><td> This Drawable is overlaid over the foreground of the Window's content area, usually
+           <tr><td><code>{@link #SherlockTheme_actionMenuTextColor com.may.ple.parking.gateway.activity:actionMenuTextColor}</code></td><td> Color for text that appears within action menu items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeBackground com.may.ple.parking.gateway.activity:actionModeBackground}</code></td><td> Background drawable to use for action mode UI </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeCloseButtonStyle com.may.ple.parking.gateway.activity:actionModeCloseButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeCloseDrawable com.may.ple.parking.gateway.activity:actionModeCloseDrawable}</code></td><td> Drawable to use for the close action mode button </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModePopupWindowStyle com.may.ple.parking.gateway.activity:actionModePopupWindowStyle}</code></td><td> PopupWindow style to use for action modes when showing as a window overlay.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeShareDrawable com.may.ple.parking.gateway.activity:actionModeShareDrawable}</code></td><td> Drawable to use for the Share action button in WebView selection action modes </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeSplitBackground com.may.ple.parking.gateway.activity:actionModeSplitBackground}</code></td><td> Background drawable to use for action mode UI in the lower split bar </td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionModeStyle com.may.ple.parking.gateway.activity:actionModeStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionOverflowButtonStyle com.may.ple.parking.gateway.activity:actionOverflowButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_actionSpinnerItemStyle com.may.ple.parking.gateway.activity:actionSpinnerItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_activatedBackgroundIndicator com.may.ple.parking.gateway.activity:activatedBackgroundIndicator}</code></td><td> Drawable used as a background for activated items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_activityChooserViewStyle com.may.ple.parking.gateway.activity:activityChooserViewStyle}</code></td><td> Default ActivityChooserView style.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_buttonStyleSmall com.may.ple.parking.gateway.activity:buttonStyleSmall}</code></td><td> Small Button style.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_dividerVertical com.may.ple.parking.gateway.activity:dividerVertical}</code></td><td> Drawable to use for generic vertical dividers.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_dropDownHintAppearance com.may.ple.parking.gateway.activity:dropDownHintAppearance}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_dropDownListViewStyle com.may.ple.parking.gateway.activity:dropDownListViewStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_dropdownListPreferredItemHeight com.may.ple.parking.gateway.activity:dropdownListPreferredItemHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_homeAsUpIndicator com.may.ple.parking.gateway.activity:homeAsUpIndicator}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPopupWindowStyle com.may.ple.parking.gateway.activity:listPopupWindowStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPreferredItemHeightSmall com.may.ple.parking.gateway.activity:listPreferredItemHeightSmall}</code></td><td> A smaller, sleeker list item height.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPreferredItemPaddingLeft com.may.ple.parking.gateway.activity:listPreferredItemPaddingLeft}</code></td><td> The preferred padding along the left edge of list items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_listPreferredItemPaddingRight com.may.ple.parking.gateway.activity:listPreferredItemPaddingRight}</code></td><td> The preferred padding along the right edge of list items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_popupMenuStyle com.may.ple.parking.gateway.activity:popupMenuStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchAutoCompleteTextView com.may.ple.parking.gateway.activity:searchAutoCompleteTextView}</code></td><td> SearchView AutoCompleteTextView style </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchDropdownBackground com.may.ple.parking.gateway.activity:searchDropdownBackground}</code></td><td> SearchView dropdown background </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchResultListItemHeight com.may.ple.parking.gateway.activity:searchResultListItemHeight}</code></td><td> The list item height for search results.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewCloseIcon com.may.ple.parking.gateway.activity:searchViewCloseIcon}</code></td><td> SearchView close button icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewEditQuery com.may.ple.parking.gateway.activity:searchViewEditQuery}</code></td><td> SearchView query refinement icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewEditQueryBackground com.may.ple.parking.gateway.activity:searchViewEditQueryBackground}</code></td><td> SearchView query refinement icon background </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewGoIcon com.may.ple.parking.gateway.activity:searchViewGoIcon}</code></td><td> SearchView Go button icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewSearchIcon com.may.ple.parking.gateway.activity:searchViewSearchIcon}</code></td><td> SearchView Search icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewTextField com.may.ple.parking.gateway.activity:searchViewTextField}</code></td><td> SearchView text field background for the left section </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewTextFieldRight com.may.ple.parking.gateway.activity:searchViewTextFieldRight}</code></td><td> SearchView text field background for the right section </td></tr>
+           <tr><td><code>{@link #SherlockTheme_searchViewVoiceIcon com.may.ple.parking.gateway.activity:searchViewVoiceIcon}</code></td><td> SearchView Voice button icon </td></tr>
+           <tr><td><code>{@link #SherlockTheme_selectableItemBackground com.may.ple.parking.gateway.activity:selectableItemBackground}</code></td><td> Background drawable for standalone items that need focus/pressed states.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_spinnerDropDownItemStyle com.may.ple.parking.gateway.activity:spinnerDropDownItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_spinnerItemStyle com.may.ple.parking.gateway.activity:spinnerItemStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceLargePopupMenu com.may.ple.parking.gateway.activity:textAppearanceLargePopupMenu}</code></td><td> Text color, typeface, size, and style for the text inside of a popup menu.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceListItemSmall com.may.ple.parking.gateway.activity:textAppearanceListItemSmall}</code></td><td> The preferred TextAppearance for the primary text of small list items.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSearchResultSubtitle com.may.ple.parking.gateway.activity:textAppearanceSearchResultSubtitle}</code></td><td> Text color, typeface, size, and style for system search result subtitle.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSearchResultTitle com.may.ple.parking.gateway.activity:textAppearanceSearchResultTitle}</code></td><td> Text color, typeface, size, and style for system search result title.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSmall com.may.ple.parking.gateway.activity:textAppearanceSmall}</code></td><td> Text color, typeface, size, and style for "small" text.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textAppearanceSmallPopupMenu com.may.ple.parking.gateway.activity:textAppearanceSmallPopupMenu}</code></td><td> Text color, typeface, size, and style for small text inside of a popup menu.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorPrimary com.may.ple.parking.gateway.activity:textColorPrimary}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorPrimaryDisableOnly com.may.ple.parking.gateway.activity:textColorPrimaryDisableOnly}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorPrimaryInverse com.may.ple.parking.gateway.activity:textColorPrimaryInverse}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_textColorSearchUrl com.may.ple.parking.gateway.activity:textColorSearchUrl}</code></td><td> Text color for urls in search suggestions, used by things like global search and the browser.</td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowActionBar com.may.ple.parking.gateway.activity:windowActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowActionBarOverlay com.may.ple.parking.gateway.activity:windowActionBarOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowActionModeOverlay com.may.ple.parking.gateway.activity:windowActionModeOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowContentOverlay com.may.ple.parking.gateway.activity:windowContentOverlay}</code></td><td> This Drawable is overlaid over the foreground of the Window's content area, usually
              to place a shadow below the title.</td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowMinWidthMajor com.may.ple.parking.gateway:windowMinWidthMajor}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowMinWidthMinor com.may.ple.parking.gateway:windowMinWidthMinor}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowNoTitle com.may.ple.parking.gateway:windowNoTitle}</code></td><td></td></tr>
-           <tr><td><code>{@link #SherlockTheme_windowSplitActionBar com.may.ple.parking.gateway:windowSplitActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowMinWidthMajor com.may.ple.parking.gateway.activity:windowMinWidthMajor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowMinWidthMinor com.may.ple.parking.gateway.activity:windowMinWidthMinor}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowNoTitle com.may.ple.parking.gateway.activity:windowNoTitle}</code></td><td></td></tr>
+           <tr><td><code>{@link #SherlockTheme_windowSplitActionBar com.may.ple.parking.gateway.activity:windowSplitActionBar}</code></td><td></td></tr>
            </table>
            @see #SherlockTheme_actionBarDivider
            @see #SherlockTheme_actionBarItemBackground
@@ -2510,7 +2514,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionBarDivider
+          @attr name com.may.ple.parking.gateway.activity:actionBarDivider
         */
         public static final int SherlockTheme_actionBarDivider = 8;
         /**
@@ -2522,7 +2526,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionBarItemBackground
+          @attr name com.may.ple.parking.gateway.activity:actionBarItemBackground
         */
         public static final int SherlockTheme_actionBarItemBackground = 9;
         /**
@@ -2549,7 +2553,7 @@ containing a value of this type.
 <tr><td><code>wrap_content</code></td><td>0</td><td></td></tr>
 </table>
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionBarSize
+          @attr name com.may.ple.parking.gateway.activity:actionBarSize
         */
         public static final int SherlockTheme_actionBarSize = 7;
         /**
@@ -2564,7 +2568,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionBarSplitStyle
+          @attr name com.may.ple.parking.gateway.activity:actionBarSplitStyle
         */
         public static final int SherlockTheme_actionBarSplitStyle = 5;
         /**
@@ -2576,17 +2580,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionBarStyle
+          @attr name com.may.ple.parking.gateway.activity:actionBarStyle
         */
         public static final int SherlockTheme_actionBarStyle = 4;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#actionBarTabBarStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#actionBarTabBarStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:actionBarTabBarStyle
+          @attr name com.may.ple.parking.gateway.activity:actionBarTabBarStyle
         */
         public static final int SherlockTheme_actionBarTabBarStyle = 1;
         /**
@@ -2598,17 +2602,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionBarTabStyle
+          @attr name com.may.ple.parking.gateway.activity:actionBarTabStyle
         */
         public static final int SherlockTheme_actionBarTabStyle = 0;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#actionBarTabTextStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#actionBarTabTextStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:actionBarTabTextStyle
+          @attr name com.may.ple.parking.gateway.activity:actionBarTabTextStyle
         */
         public static final int SherlockTheme_actionBarTabTextStyle = 2;
         /**
@@ -2626,27 +2630,27 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionBarWidgetTheme
+          @attr name com.may.ple.parking.gateway.activity:actionBarWidgetTheme
         */
         public static final int SherlockTheme_actionBarWidgetTheme = 6;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#actionButtonStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#actionButtonStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:actionButtonStyle
+          @attr name com.may.ple.parking.gateway.activity:actionButtonStyle
         */
         public static final int SherlockTheme_actionButtonStyle = 52;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#actionDropDownStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#actionDropDownStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:actionDropDownStyle
+          @attr name com.may.ple.parking.gateway.activity:actionDropDownStyle
         */
         public static final int SherlockTheme_actionDropDownStyle = 51;
         /**
@@ -2659,7 +2663,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionMenuTextAppearance
+          @attr name com.may.ple.parking.gateway.activity:actionMenuTextAppearance
         */
         public static final int SherlockTheme_actionMenuTextAppearance = 10;
         /**
@@ -2673,7 +2677,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionMenuTextColor
+          @attr name com.may.ple.parking.gateway.activity:actionMenuTextColor
         */
         public static final int SherlockTheme_actionMenuTextColor = 11;
         /**
@@ -2685,17 +2689,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionModeBackground
+          @attr name com.may.ple.parking.gateway.activity:actionModeBackground
         */
         public static final int SherlockTheme_actionModeBackground = 14;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#actionModeCloseButtonStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#actionModeCloseButtonStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:actionModeCloseButtonStyle
+          @attr name com.may.ple.parking.gateway.activity:actionModeCloseButtonStyle
         */
         public static final int SherlockTheme_actionModeCloseButtonStyle = 13;
         /**
@@ -2707,7 +2711,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionModeCloseDrawable
+          @attr name com.may.ple.parking.gateway.activity:actionModeCloseDrawable
         */
         public static final int SherlockTheme_actionModeCloseDrawable = 16;
         /**
@@ -2719,7 +2723,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionModePopupWindowStyle
+          @attr name com.may.ple.parking.gateway.activity:actionModePopupWindowStyle
         */
         public static final int SherlockTheme_actionModePopupWindowStyle = 18;
         /**
@@ -2731,7 +2735,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionModeShareDrawable
+          @attr name com.may.ple.parking.gateway.activity:actionModeShareDrawable
         */
         public static final int SherlockTheme_actionModeShareDrawable = 17;
         /**
@@ -2743,37 +2747,37 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:actionModeSplitBackground
+          @attr name com.may.ple.parking.gateway.activity:actionModeSplitBackground
         */
         public static final int SherlockTheme_actionModeSplitBackground = 15;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#actionModeStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#actionModeStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:actionModeStyle
+          @attr name com.may.ple.parking.gateway.activity:actionModeStyle
         */
         public static final int SherlockTheme_actionModeStyle = 12;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#actionOverflowButtonStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#actionOverflowButtonStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:actionOverflowButtonStyle
+          @attr name com.may.ple.parking.gateway.activity:actionOverflowButtonStyle
         */
         public static final int SherlockTheme_actionOverflowButtonStyle = 3;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#actionSpinnerItemStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#actionSpinnerItemStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:actionSpinnerItemStyle
+          @attr name com.may.ple.parking.gateway.activity:actionSpinnerItemStyle
         */
         public static final int SherlockTheme_actionSpinnerItemStyle = 57;
         /**
@@ -2785,7 +2789,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:activatedBackgroundIndicator
+          @attr name com.may.ple.parking.gateway.activity:activatedBackgroundIndicator
         */
         public static final int SherlockTheme_activatedBackgroundIndicator = 65;
         /**
@@ -2797,7 +2801,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:activityChooserViewStyle
+          @attr name com.may.ple.parking.gateway.activity:activityChooserViewStyle
         */
         public static final int SherlockTheme_activityChooserViewStyle = 64;
         /**
@@ -2809,7 +2813,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:buttonStyleSmall
+          @attr name com.may.ple.parking.gateway.activity:buttonStyleSmall
         */
         public static final int SherlockTheme_buttonStyleSmall = 19;
         /**
@@ -2821,31 +2825,31 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:dividerVertical
+          @attr name com.may.ple.parking.gateway.activity:dividerVertical
         */
         public static final int SherlockTheme_dividerVertical = 50;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#dropDownHintAppearance}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#dropDownHintAppearance}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:dropDownHintAppearance
+          @attr name com.may.ple.parking.gateway.activity:dropDownHintAppearance
         */
         public static final int SherlockTheme_dropDownHintAppearance = 66;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#dropDownListViewStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#dropDownListViewStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:dropDownListViewStyle
+          @attr name com.may.ple.parking.gateway.activity:dropDownListViewStyle
         */
         public static final int SherlockTheme_dropDownListViewStyle = 54;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#dropdownListPreferredItemHeight}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#dropdownListPreferredItemHeight}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -2857,27 +2861,27 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:dropdownListPreferredItemHeight
+          @attr name com.may.ple.parking.gateway.activity:dropdownListPreferredItemHeight
         */
         public static final int SherlockTheme_dropdownListPreferredItemHeight = 56;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#homeAsUpIndicator}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#homeAsUpIndicator}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:homeAsUpIndicator
+          @attr name com.may.ple.parking.gateway.activity:homeAsUpIndicator
         */
         public static final int SherlockTheme_homeAsUpIndicator = 53;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#listPopupWindowStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#listPopupWindowStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:listPopupWindowStyle
+          @attr name com.may.ple.parking.gateway.activity:listPopupWindowStyle
         */
         public static final int SherlockTheme_listPopupWindowStyle = 63;
         /**
@@ -2895,7 +2899,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:listPreferredItemHeightSmall
+          @attr name com.may.ple.parking.gateway.activity:listPreferredItemHeightSmall
         */
         public static final int SherlockTheme_listPreferredItemHeightSmall = 44;
         /**
@@ -2913,7 +2917,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:listPreferredItemPaddingLeft
+          @attr name com.may.ple.parking.gateway.activity:listPreferredItemPaddingLeft
         */
         public static final int SherlockTheme_listPreferredItemPaddingLeft = 45;
         /**
@@ -2931,17 +2935,17 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:listPreferredItemPaddingRight
+          @attr name com.may.ple.parking.gateway.activity:listPreferredItemPaddingRight
         */
         public static final int SherlockTheme_listPreferredItemPaddingRight = 46;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#popupMenuStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#popupMenuStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:popupMenuStyle
+          @attr name com.may.ple.parking.gateway.activity:popupMenuStyle
         */
         public static final int SherlockTheme_popupMenuStyle = 55;
         /**
@@ -2953,7 +2957,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchAutoCompleteTextView
+          @attr name com.may.ple.parking.gateway.activity:searchAutoCompleteTextView
         */
         public static final int SherlockTheme_searchAutoCompleteTextView = 30;
         /**
@@ -2965,7 +2969,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchDropdownBackground
+          @attr name com.may.ple.parking.gateway.activity:searchDropdownBackground
         */
         public static final int SherlockTheme_searchDropdownBackground = 31;
         /**
@@ -2983,7 +2987,7 @@ theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchResultListItemHeight
+          @attr name com.may.ple.parking.gateway.activity:searchResultListItemHeight
         */
         public static final int SherlockTheme_searchResultListItemHeight = 41;
         /**
@@ -2995,7 +2999,7 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchViewCloseIcon
+          @attr name com.may.ple.parking.gateway.activity:searchViewCloseIcon
         */
         public static final int SherlockTheme_searchViewCloseIcon = 32;
         /**
@@ -3007,7 +3011,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchViewEditQuery
+          @attr name com.may.ple.parking.gateway.activity:searchViewEditQuery
         */
         public static final int SherlockTheme_searchViewEditQuery = 36;
         /**
@@ -3019,7 +3023,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchViewEditQueryBackground
+          @attr name com.may.ple.parking.gateway.activity:searchViewEditQueryBackground
         */
         public static final int SherlockTheme_searchViewEditQueryBackground = 37;
         /**
@@ -3031,7 +3035,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchViewGoIcon
+          @attr name com.may.ple.parking.gateway.activity:searchViewGoIcon
         */
         public static final int SherlockTheme_searchViewGoIcon = 33;
         /**
@@ -3043,7 +3047,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchViewSearchIcon
+          @attr name com.may.ple.parking.gateway.activity:searchViewSearchIcon
         */
         public static final int SherlockTheme_searchViewSearchIcon = 34;
         /**
@@ -3055,7 +3059,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchViewTextField
+          @attr name com.may.ple.parking.gateway.activity:searchViewTextField
         */
         public static final int SherlockTheme_searchViewTextField = 38;
         /**
@@ -3067,7 +3071,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchViewTextFieldRight
+          @attr name com.may.ple.parking.gateway.activity:searchViewTextFieldRight
         */
         public static final int SherlockTheme_searchViewTextFieldRight = 39;
         /**
@@ -3079,7 +3083,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:searchViewVoiceIcon
+          @attr name com.may.ple.parking.gateway.activity:searchViewVoiceIcon
         */
         public static final int SherlockTheme_searchViewVoiceIcon = 35;
         /**
@@ -3091,27 +3095,27 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:selectableItemBackground
+          @attr name com.may.ple.parking.gateway.activity:selectableItemBackground
         */
         public static final int SherlockTheme_selectableItemBackground = 20;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#spinnerDropDownItemStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#spinnerDropDownItemStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:spinnerDropDownItemStyle
+          @attr name com.may.ple.parking.gateway.activity:spinnerDropDownItemStyle
         */
         public static final int SherlockTheme_spinnerDropDownItemStyle = 29;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#spinnerItemStyle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#spinnerItemStyle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name com.may.ple.parking.gateway:spinnerItemStyle
+          @attr name com.may.ple.parking.gateway.activity:spinnerItemStyle
         */
         public static final int SherlockTheme_spinnerItemStyle = 28;
         /**
@@ -3123,7 +3127,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:textAppearanceLargePopupMenu
+          @attr name com.may.ple.parking.gateway.activity:textAppearanceLargePopupMenu
         */
         public static final int SherlockTheme_textAppearanceLargePopupMenu = 22;
         /**
@@ -3135,7 +3139,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:textAppearanceListItemSmall
+          @attr name com.may.ple.parking.gateway.activity:textAppearanceListItemSmall
         */
         public static final int SherlockTheme_textAppearanceListItemSmall = 47;
         /**
@@ -3147,7 +3151,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:textAppearanceSearchResultSubtitle
+          @attr name com.may.ple.parking.gateway.activity:textAppearanceSearchResultSubtitle
         */
         public static final int SherlockTheme_textAppearanceSearchResultSubtitle = 43;
         /**
@@ -3159,7 +3163,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:textAppearanceSearchResultTitle
+          @attr name com.may.ple.parking.gateway.activity:textAppearanceSearchResultTitle
         */
         public static final int SherlockTheme_textAppearanceSearchResultTitle = 42;
         /**
@@ -3171,7 +3175,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:textAppearanceSmall
+          @attr name com.may.ple.parking.gateway.activity:textAppearanceSmall
         */
         public static final int SherlockTheme_textAppearanceSmall = 24;
         /**
@@ -3183,11 +3187,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:textAppearanceSmallPopupMenu
+          @attr name com.may.ple.parking.gateway.activity:textAppearanceSmallPopupMenu
         */
         public static final int SherlockTheme_textAppearanceSmallPopupMenu = 23;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#textColorPrimary}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#textColorPrimary}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -3198,11 +3202,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:textColorPrimary
+          @attr name com.may.ple.parking.gateway.activity:textColorPrimary
         */
         public static final int SherlockTheme_textColorPrimary = 25;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#textColorPrimaryDisableOnly}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#textColorPrimaryDisableOnly}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -3213,11 +3217,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:textColorPrimaryDisableOnly
+          @attr name com.may.ple.parking.gateway.activity:textColorPrimaryDisableOnly
         */
         public static final int SherlockTheme_textColorPrimaryDisableOnly = 26;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#textColorPrimaryInverse}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#textColorPrimaryInverse}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -3228,7 +3232,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:textColorPrimaryInverse
+          @attr name com.may.ple.parking.gateway.activity:textColorPrimaryInverse
         */
         public static final int SherlockTheme_textColorPrimaryInverse = 27;
         /**
@@ -3242,11 +3246,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <p>May be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:textColorSearchUrl
+          @attr name com.may.ple.parking.gateway.activity:textColorSearchUrl
         */
         public static final int SherlockTheme_textColorSearchUrl = 40;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#windowActionBar}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#windowActionBar}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -3256,11 +3260,11 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:windowActionBar
+          @attr name com.may.ple.parking.gateway.activity:windowActionBar
         */
         public static final int SherlockTheme_windowActionBar = 59;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#windowActionBarOverlay}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#windowActionBarOverlay}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -3270,11 +3274,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:windowActionBarOverlay
+          @attr name com.may.ple.parking.gateway.activity:windowActionBarOverlay
         */
         public static final int SherlockTheme_windowActionBarOverlay = 60;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#windowActionModeOverlay}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#windowActionModeOverlay}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -3284,7 +3288,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:windowActionModeOverlay
+          @attr name com.may.ple.parking.gateway.activity:windowActionModeOverlay
         */
         public static final int SherlockTheme_windowActionModeOverlay = 61;
         /**
@@ -3297,11 +3301,11 @@ containing a value of this type.
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
           <p>This is a private symbol.
-          @attr name com.may.ple.parking.gateway:windowContentOverlay
+          @attr name com.may.ple.parking.gateway.activity:windowContentOverlay
         */
         public static final int SherlockTheme_windowContentOverlay = 21;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#windowMinWidthMajor}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#windowMinWidthMajor}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -3313,11 +3317,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:windowMinWidthMajor
+          @attr name com.may.ple.parking.gateway.activity:windowMinWidthMajor
         */
         public static final int SherlockTheme_windowMinWidthMajor = 48;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#windowMinWidthMinor}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#windowMinWidthMinor}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -3329,11 +3333,11 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:windowMinWidthMinor
+          @attr name com.may.ple.parking.gateway.activity:windowMinWidthMinor
         */
         public static final int SherlockTheme_windowMinWidthMinor = 49;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#windowNoTitle}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#windowNoTitle}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -3343,11 +3347,11 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:windowNoTitle
+          @attr name com.may.ple.parking.gateway.activity:windowNoTitle
         */
         public static final int SherlockTheme_windowNoTitle = 58;
         /**
-          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.R.attr#windowSplitActionBar}
+          <p>This symbol is the offset where the {@link com.may.ple.parking.gateway.activity.R.attr#windowSplitActionBar}
           attribute's value can be found in the {@link #SherlockTheme} array.
 
 
@@ -3357,7 +3361,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name com.may.ple.parking.gateway:windowSplitActionBar
+          @attr name com.may.ple.parking.gateway.activity:windowSplitActionBar
         */
         public static final int SherlockTheme_windowSplitActionBar = 62;
         /** Attributes that can be used with a SherlockView.
