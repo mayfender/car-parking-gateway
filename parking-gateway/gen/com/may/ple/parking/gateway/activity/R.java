@@ -919,19 +919,20 @@ containing a value of this type.
         public static final int action_bar_bg=0x7f020070;
         public static final int bg_repeat=0x7f020071;
         public static final int bg_repeat_2=0x7f020072;
-        public static final int edittext_bg_default=0x7f020073;
-        public static final int edittext_bg_focused=0x7f020074;
-        public static final int edittext_bg_list=0x7f020075;
-        public static final int edittext_cursor_color=0x7f020076;
-        public static final int gateway_btn=0x7f020077;
-        public static final int ic_launcher=0x7f020078;
-        public static final int ic_launcher_settings=0x7f020079;
-        public static final int login_bg=0x7f02007a;
-        public static final int settings_icon=0x7f02007b;
-        public static final int tab_bar_bg=0x7f02007c;
-        public static final int tab_bg=0x7f02007d;
-        public static final int tab_indicator=0x7f02007e;
-        public static final int tab_view_bg=0x7f02007f;
+        public static final int delete_keyboard=0x7f020073;
+        public static final int edittext_bg_default=0x7f020074;
+        public static final int edittext_bg_focused=0x7f020075;
+        public static final int edittext_bg_list=0x7f020076;
+        public static final int edittext_cursor_color=0x7f020077;
+        public static final int gateway_btn=0x7f020078;
+        public static final int ic_launcher=0x7f020079;
+        public static final int ic_launcher_settings=0x7f02007a;
+        public static final int login_bg=0x7f02007b;
+        public static final int settings_icon=0x7f02007c;
+        public static final int tab_bar_bg=0x7f02007d;
+        public static final int tab_bg=0x7f02007e;
+        public static final int tab_indicator=0x7f02007f;
+        public static final int tab_view_bg=0x7f020080;
     }
     public static final class id {
         public static final int abs__action_bar=0x7f0a0020;
@@ -973,24 +974,28 @@ containing a value of this type.
         public static final int abs__textButton=0x7f0a0013;
         public static final int abs__title=0x7f0a001b;
         public static final int abs__up=0x7f0a0001;
-        public static final int action_settings=0x7f0a0038;
-        public static final int button=0x7f0a0037;
+        public static final int action_settings=0x7f0a003c;
+        public static final int button=0x7f0a003b;
+        public static final int checkIn=0x7f0a0038;
+        public static final int checkOut=0x7f0a0039;
+        public static final int delete=0x7f0a0033;
         public static final int disableHome=0x7f0a000a;
         public static final int edit_query=0x7f0a0026;
-        public static final int gatewayIn=0x7f0a0032;
-        public static final int gatewayOut=0x7f0a0033;
+        public static final int gatewayIn=0x7f0a0034;
+        public static final int gatewayOut=0x7f0a0035;
         public static final int homeAsUp=0x7f0a000b;
         public static final int listMode=0x7f0a0007;
-        public static final int login_button=0x7f0a0036;
-        public static final int menu_item_action_provider_action_bar=0x7f0a0039;
+        public static final int login_button=0x7f0a003a;
+        public static final int menu_item_action_provider_action_bar=0x7f0a003d;
         public static final int normal=0x7f0a0008;
-        public static final int password=0x7f0a0035;
+        public static final int password=0x7f0a0037;
+        public static final int show=0x7f0a0032;
         public static final int showCustom=0x7f0a000c;
         public static final int showHome=0x7f0a000d;
         public static final int showTitle=0x7f0a000e;
         public static final int tabMode=0x7f0a0009;
         public static final int useLogo=0x7f0a000f;
-        public static final int user_name=0x7f0a0034;
+        public static final int user_name=0x7f0a0036;
         public static final int wrap_content=0x7f0a0006;
     }
     public static final class integer {
@@ -1018,11 +1023,13 @@ containing a value of this type.
         public static final int abs__search_dropdown_item_icons_2line=0x7f030012;
         public static final int abs__search_view=0x7f030013;
         public static final int abs__simple_dropdown_hint=0x7f030014;
-        public static final int gate_selection=0x7f030015;
-        public static final int login=0x7f030016;
-        public static final int settings_action_provider=0x7f030017;
-        public static final int sherlock_spinner_dropdown_item=0x7f030018;
-        public static final int sherlock_spinner_item=0x7f030019;
+        public static final int gate_in=0x7f030015;
+        public static final int gate_out=0x7f030016;
+        public static final int gate_selection=0x7f030017;
+        public static final int login=0x7f030018;
+        public static final int settings_action_provider=0x7f030019;
+        public static final int sherlock_spinner_dropdown_item=0x7f03001a;
+        public static final int sherlock_spinner_item=0x7f03001b;
     }
     public static final class menu {
         public static final int main=0x7f0d0000;

@@ -22,6 +22,10 @@
         
         <activity android:name=".GateSelectionActivity" />
         
+        <activity android:name=".GateInActivity" />
+        
+        <activity android:name=".GateOutActivity" />
+        
         <activity android:name="com.may.ple.parking.gateway.setting.PreferenceActivitySetting"
 		    	  android:label="@string/action_settings" />
     </application>
