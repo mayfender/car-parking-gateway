@@ -1,15 +1,15 @@
 package com.may.ple.parking.gateway.criteria;
 
 public class VehicleSaveCriteriaReq {
-	private Integer licenseNo;
+	private String licenseNo;
 	private String deviceId;
 	private String gateName;
 	
-	public Integer getLicenseNo() {
+	public String getLicenseNo() {
 		return licenseNo;
 	}
 	
-	public void setLicenseNo(Integer licenseNo) {
+	public void setLicenseNo(String licenseNo) {
 		this.licenseNo = licenseNo;
 	}
 

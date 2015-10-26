@@ -73,7 +73,7 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 				String url = setting.getString(SettingKey.webserviceUrl, "");
 				
 				VehicleSaveCriteriaReq req = new VehicleSaveCriteriaReq();
-				req.setLicenseNo(Integer.parseInt(params[0]));
+				req.setLicenseNo(params[0]);
 				
 				RestTemplate restTemplate = new RestTemplate();
 				return restTemplate.postForObject(url, req, VehicleSaveCriteriaResp.class);
