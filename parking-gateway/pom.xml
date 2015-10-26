@@ -15,6 +15,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <android.sdk.path>C:/AppData/Local/Android/android-sdk</android.sdk.path>
+        <spring.version>2.0.0.M1</spring.version>
+        <jackson.version>2.6.0</jackson.version>
 	</properties>
 
 	<dependencies>
@@ -23,6 +25,16 @@
 			<artifactId>android</artifactId>
 			<version>${platform.version}</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+	        <groupId>org.springframework.android</groupId>
+	        <artifactId>spring-android-rest-template</artifactId>
+	        <version>${spring.version}</version>
+	    </dependency>
+	    <dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>${jackson.version}</version>
 		</dependency>
 	</dependencies>
 	
@@ -58,4 +70,15 @@
             </plugin>
 		</plugins>
 	</build>
+	
+	<repositories>
+	    <repository>
+	        <id>spring-milestones</id>
+	        <name>Spring Milestones</name>
+	        <url>http://repo.spring.io/milestone</url>
+	        <snapshots>
+	            <enabled>false</enabled>
+	        </snapshots>
+	    </repository>
+	</repositories>
 </project>

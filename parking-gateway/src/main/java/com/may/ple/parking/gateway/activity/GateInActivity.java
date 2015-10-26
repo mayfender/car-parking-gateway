@@ -1,6 +1,11 @@
 package com.may.ple.parking.gateway.activity;
 
+import org.springframework.web.client.RestTemplate;
+
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
@@ -9,9 +14,12 @@ import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Window;
+import com.may.ple.parking.gateway.criteria.VehicleSaveCriteriaReq;
+import com.may.ple.parking.gateway.criteria.VehicleSaveCriteriaResp;
+import com.may.ple.parking.gateway.utils.constant.SettingKey;
 
 public class GateInActivity extends SherlockActivity implements OnLongClickListener {
-	private String result = "";
+	private String licenseNo = "";
 	private TextView show;
 	
 	@Override
@@ -30,28 +38,57 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 	public void onClick(View view) {
 		
 		if(view.getId() == R.id.delete) {
-			if(result.length() > 0)
-				result = result.substring(0, result.length() - 1);
+			if(licenseNo.length() > 0)
+				licenseNo = licenseNo.substring(0, licenseNo.length() - 1);
 		}else{
-			if(result.length() >= 4) return;
+			if(licenseNo.length() >= 4) return;
 			
-			result += ((Button)view).getText();			
+			licenseNo += ((Button)view).getText();			
 		}
 		
-		show.setText(result);
+		show.setText(licenseNo);
 	}
 
 	@Override
 	public boolean onLongClick(View v) {
 		
 		if(v.getId() == R.id.show) {
-			Toast.makeText(this, "ส่งข้อมูลแล้ว", Toast.LENGTH_SHORT).show();
+			if(licenseNo == null || licenseNo.trim().length() == 0) return false;
+						
+			new SendData().execute(licenseNo);
+		}
+	
+		licenseNo = "";
+		show.setText(licenseNo);			
+		return false;
+	}
+	
+	
+	class SendData extends AsyncTask <String, Void, VehicleSaveCriteriaResp> {
+
+		@Override
+		protected VehicleSaveCriteriaResp doInBackground(String... params) {
+			try {
+				SharedPreferences setting = PreferenceManager.getDefaultSharedPreferences(GateInActivity.this);
+				String url = setting.getString(SettingKey.webserviceUrl, "");
+				
+				VehicleSaveCriteriaReq req = new VehicleSaveCriteriaReq();
+				req.setLicenseNo(Integer.parseInt(params[0]));
+				
+				RestTemplate restTemplate = new RestTemplate();
+				return restTemplate.postForObject(url, req, VehicleSaveCriteriaResp.class);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
 		}
 		
-		result = "";
-		show.setText(result);			
+		@Override	
+		protected void onPostExecute(VehicleSaveCriteriaResp resp) {
+			if(resp != null)
+				Toast.makeText(GateInActivity.this, "ส่งข้อมูลแล้ว status: " +resp.getStatusCode(), Toast.LENGTH_SHORT).show();
+		}
 		
-		return false;
 	}
 
 }
