@@ -1,0 +1,1 @@
+1. On setting page would like to create new field to separate ip and port.
