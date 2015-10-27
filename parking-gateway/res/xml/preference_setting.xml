@@ -3,8 +3,12 @@
 
     <PreferenceCategory android:title="SERVICE" >
         <EditTextPreference
-            android:key="com.may.ple.restaurant.webservice.url"
-            android:title="Connect to" />
+            android:key="setting.connection.parking.center.ip"
+            android:title="IP" />
+        
+        <EditTextPreference
+            android:key="setting.connection.parking.center.port"
+            android:title="PORT" />
 
         <!-- android:summary="http://192.168.1.100:8080/jsfproject/rest" -->
         <!-- android:summary="ws://192.168.1.100:8787" -->

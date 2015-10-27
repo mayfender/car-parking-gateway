@@ -70,7 +70,10 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 		protected VehicleSaveCriteriaResp doInBackground(String... params) {
 			try {
 				SharedPreferences setting = PreferenceManager.getDefaultSharedPreferences(GateInActivity.this);
-				String url = setting.getString(SettingKey.webserviceUrl, "");
+				String ip = setting.getString(SettingKey.parkingCenterIp, "");
+				String port = setting.getString(SettingKey.parkingCenterPort, "");
+				
+				String url = "http://" + ip + ":" + port + "/parking-center/restAct/vehicle/saveVehicleParking";
 				
 				VehicleSaveCriteriaReq req = new VehicleSaveCriteriaReq();
 				req.setLicenseNo(params[0]);

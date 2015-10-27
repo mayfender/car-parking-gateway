@@ -17,12 +17,15 @@ public class PreferenceFragmentSetting extends PreferenceFragment implements OnP
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.xml.preference_setting);
-		EditTextPreference webserviceUrl = (EditTextPreference)findPreference(SettingKey.webserviceUrl);
+		EditTextPreference parkingCenterIp = (EditTextPreference)findPreference(SettingKey.parkingCenterIp);
+		EditTextPreference parkingCenterPort = (EditTextPreference)findPreference(SettingKey.parkingCenterPort);
 		
 		SharedPreferences setting = PreferenceManager.getDefaultSharedPreferences(getActivity());
-		webserviceUrl.setSummary(setting.getString(SettingKey.webserviceUrl, null));
+		parkingCenterIp.setSummary(setting.getString(SettingKey.parkingCenterIp, null));
+		parkingCenterPort.setSummary(setting.getString(SettingKey.parkingCenterPort, null));
 		
-		webserviceUrl.setOnPreferenceChangeListener(this);
+		parkingCenterIp.setOnPreferenceChangeListener(this);
+		parkingCenterPort.setOnPreferenceChangeListener(this);
 	}
 
 	@Override
