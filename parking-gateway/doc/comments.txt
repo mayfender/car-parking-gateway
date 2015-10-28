@@ -1,1 +1,2 @@
 1. On setting page would like to create new field to separate ip and port.
+2. For Qr-code reader my friend Vi suggest to use ZXING lib
