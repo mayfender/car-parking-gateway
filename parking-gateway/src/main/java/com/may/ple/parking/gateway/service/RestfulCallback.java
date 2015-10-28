@@ -1,7 +1,7 @@
 package com.may.ple.parking.gateway.service;
 
-public interface RestfulCallback<P> {
+public interface RestfulCallback {
 	
-	public void onComplete(P p);
+	public void onComplete(Object obj);
 
 }
