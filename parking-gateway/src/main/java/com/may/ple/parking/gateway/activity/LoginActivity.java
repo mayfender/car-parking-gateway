@@ -1,5 +1,10 @@
 package com.may.ple.parking.gateway.activity;
 
+import java.util.HashMap;
+
+import org.springframework.http.HttpMethod;
+import org.springframework.util.support.Base64;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +19,11 @@ import android.widget.Toast;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.ActionProvider;
 import com.actionbarsherlock.view.Menu;
+import com.may.ple.parking.gateway.service.LoginService;
+import com.may.ple.parking.gateway.service.RestfulCallback;
 import com.may.ple.parking.gateway.setting.PreferenceActivitySetting;
 
-public class LoginActivity extends SherlockActivity implements OnClickListener {
+public class LoginActivity extends SherlockActivity implements OnClickListener, RestfulCallback<String> {
 	private Integer selectedGate;
 	
     @Override
@@ -46,8 +53,16 @@ public class LoginActivity extends SherlockActivity implements OnClickListener {
     	String userName = ((EditText)findViewById(R.id.user_name)).getText().toString();
     	String password = ((EditText)findViewById(R.id.password)).getText().toString();
     	
+    	HashMap<String, String> headers = new HashMap<String, String>();
+//    	headers.put("authorization", "Basic " + Base64.encodeBytes((userName + ":" + password).getBytes()));
+    	headers.put("authorization", "Basic " + Base64.encodeBytes(("cat:1234").getBytes()));
+    	
+    	new LoginService<String, Void, String>(this, this, "/user", HttpMethod.GET, headers).execute();
+    	
+    	
+    	
     	//-----------------------------------------
-    	Intent intent = null;
+    	/*Intent intent = null;
     	if(selectedGate == 1) {
     		intent = new Intent(this, GateInActivity.class);
     	} else if(selectedGate == 2) {
@@ -55,7 +70,7 @@ public class LoginActivity extends SherlockActivity implements OnClickListener {
     	}
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
     	startActivity(intent);
-    	overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+    	overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);*/
     	
 	}
     
@@ -97,6 +112,14 @@ public class LoginActivity extends SherlockActivity implements OnClickListener {
             return view;
         }
     }
+
+
+	@Override
+	public void onComplete(String resp) {
+		System.out.println("OK");
+		Toast.makeText(this, (resp == null) + "", Toast.LENGTH_SHORT).show();
+	}
+
 
 }
 
