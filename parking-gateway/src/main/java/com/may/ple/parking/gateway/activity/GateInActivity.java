@@ -1,11 +1,8 @@
 package com.may.ple.parking.gateway.activity;
 
-import org.springframework.web.client.RestTemplate;
+import org.springframework.http.HttpMethod;
 
-import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
@@ -16,11 +13,13 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Window;
 import com.may.ple.parking.gateway.criteria.VehicleSaveCriteriaReq;
 import com.may.ple.parking.gateway.criteria.VehicleSaveCriteriaResp;
-import com.may.ple.parking.gateway.utils.constant.SettingKey;
+import com.may.ple.parking.gateway.service.CenterService;
+import com.may.ple.parking.gateway.service.RestfulCallback;
 
-public class GateInActivity extends SherlockActivity implements OnLongClickListener {
+public class GateInActivity extends SherlockActivity implements OnLongClickListener, RestfulCallback {
 	private String licenseNo = "";
 	private TextView show;
+	private CenterService service;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,6 +32,7 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
         
         Button delete = (Button)findViewById(R.id.delete);
         delete.setOnLongClickListener(this);
+        service = new CenterService(this, this);
     }
 	
 	public void onClick(View view) {
@@ -55,43 +55,19 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 		if(v.getId() == R.id.show) {
 			if(licenseNo == null || licenseNo.trim().length() == 0) return false;
 						
-			new SendData().execute(licenseNo);
+			VehicleSaveCriteriaReq req = new VehicleSaveCriteriaReq();
+			req.setLicenseNo(licenseNo);
+			service.send(1, req, VehicleSaveCriteriaResp.class, "/restAct/vehicle/saveVehicleParking", HttpMethod.POST);
 		}
 	
 		licenseNo = "";
 		show.setText(licenseNo);			
 		return false;
 	}
-	
-	
-	class SendData extends AsyncTask <String, Void, VehicleSaveCriteriaResp> {
 
-		@Override
-		protected VehicleSaveCriteriaResp doInBackground(String... params) {
-			try {
-				SharedPreferences setting = PreferenceManager.getDefaultSharedPreferences(GateInActivity.this);
-				String ip = setting.getString(SettingKey.parkingCenterIp, "");
-				String port = setting.getString(SettingKey.parkingCenterPort, "");
-				
-				String url = "http://" + ip + ":" + port + "/parking-center/restAct/vehicle/saveVehicleParking";
-				
-				VehicleSaveCriteriaReq req = new VehicleSaveCriteriaReq();
-				req.setLicenseNo(params[0]);
-				
-				RestTemplate restTemplate = new RestTemplate();
-				return restTemplate.postForObject(url, req, VehicleSaveCriteriaResp.class);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			return null;
-		}
-		
-		@Override	
-		protected void onPostExecute(VehicleSaveCriteriaResp resp) {
-			if(resp != null)
-				Toast.makeText(GateInActivity.this, "ส่งข้อมูลแล้ว status: " +resp.getStatusCode(), Toast.LENGTH_SHORT).show();
-		}
-		
+	@Override
+	public void onComplete(int id, Object obj) {
+		Toast.makeText(this, "Sent already", Toast.LENGTH_SHORT).show();
 	}
-
+	
 }

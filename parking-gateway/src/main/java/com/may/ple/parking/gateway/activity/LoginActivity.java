@@ -1,7 +1,5 @@
 package com.may.ple.parking.gateway.activity;
 
-import org.springframework.http.HttpMethod;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -60,7 +58,7 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
     		return;    		
     	}
     	
-    	new CenterService(this, "/user", HttpMethod.GET, this).login(username, password);
+    	new CenterService(this, this).login(username, password, "/user");
 	}
     
     public void onRadioButtonClicked(View view) {
@@ -104,7 +102,7 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
 
 
 	@Override
-	public void onComplete(Object result) {
+	public void onComplete(int id, Object result) {
 		LoginCriteriaResp resp = (LoginCriteriaResp)result;
 		
 		if(resp == null) {
