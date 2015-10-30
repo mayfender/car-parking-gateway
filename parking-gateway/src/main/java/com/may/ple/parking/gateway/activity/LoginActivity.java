@@ -46,14 +46,14 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
     		return;
     	}
     	
-    	String username = ((EditText)findViewById(R.id.user_name)).getText().toString();
-    	String password = ((EditText)findViewById(R.id.password)).getText().toString();
+    	String username = ((EditText)findViewById(R.id.user_name)).getText().toString().trim();
+    	String password = ((EditText)findViewById(R.id.password)).getText().toString().trim();
     	
-    	if(username == null || username.trim().isEmpty()) {
+    	if(username == null || username.isEmpty()) {
     		Toast.makeText(this, "กรุณากรอก ชื่อผู้ใช้", Toast.LENGTH_SHORT).show();    		
     		return;
     	}
-    	if(password == null || password.trim().isEmpty()) {
+    	if(password == null || password.isEmpty()) {
     		Toast.makeText(this, "กรุณากรอก รหัสผ่าน", Toast.LENGTH_SHORT).show();
     		return;    		
     	}
