@@ -15,19 +15,21 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.ActionProvider;
 import com.actionbarsherlock.view.Menu;
 import com.may.ple.parking.gateway.criteria.LoginCriteriaResp;
+import com.may.ple.parking.gateway.dialog.ProgressDialogSpinner;
 import com.may.ple.parking.gateway.service.CenterService;
 import com.may.ple.parking.gateway.service.RestfulCallback;
 import com.may.ple.parking.gateway.setting.PreferenceActivitySetting;
 
 public class LoginActivity extends SherlockActivity implements OnClickListener, RestfulCallback {
 	private Integer selectedGate;
+	private ProgressDialogSpinner spinner;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-        
         findViewById(R.id.login_button).setOnClickListener(this);
+        spinner = new ProgressDialogSpinner(this);
     }
    
     @Override
@@ -58,6 +60,7 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
     		return;    		
     	}
     	
+    	spinner.show();
     	new CenterService(this, this).login(username, password, "/user");
 	}
     
@@ -103,34 +106,40 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
 
 	@Override
 	public void onComplete(int id, Object result) {
-		LoginCriteriaResp resp = (LoginCriteriaResp)result;
-		
-		if(resp == null) {
-			Toast.makeText(this, "ระบบทำงานผิดพลาด กรุณาลองอีกครั้ง", Toast.LENGTH_SHORT).show();
-			return;
-		}
-		else if(resp.statusCode != 9999 || !resp.authenticated) {
-			if(resp.statusCode == 5000) {
-				Toast.makeText(this, "ไม่สามารถเชื่อมต่อกับข้อมูลกลางได้", Toast.LENGTH_SHORT).show();
+		try {
+			LoginCriteriaResp resp = (LoginCriteriaResp)result;
+			
+			if(resp == null) {
+				Toast.makeText(this, "ระบบทำงานผิดพลาด กรุณาลองอีกครั้ง", Toast.LENGTH_SHORT).show();
+				return;
 			}
-			else if(resp.statusCode == 401) {
-				Toast.makeText(this, "ข้อมูลไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง", Toast.LENGTH_SHORT).show();				
-			}else{
-				Toast.makeText(this, "Login ไม่สำเร็จ", Toast.LENGTH_SHORT).show();
+			else if(resp.statusCode != 9999 || !resp.authenticated) {
+				if(resp.statusCode == 5000) {
+					Toast.makeText(this, "ไม่สามารถเชื่อมต่อกับข้อมูลกลางได้", Toast.LENGTH_SHORT).show();
+				}
+				else if(resp.statusCode == 401) {
+					Toast.makeText(this, "ข้อมูลไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง", Toast.LENGTH_SHORT).show();				
+				}else{
+					Toast.makeText(this, "Login ไม่สำเร็จ", Toast.LENGTH_SHORT).show();
+				}
+				
+				return;
 			}
 			
-			return;
+	    	Intent intent = null;
+	    	if(selectedGate == 1) {
+	    		intent = new Intent(this, GateInActivity.class);
+	    	} else if(selectedGate == 2) {
+	    		intent = new Intent(this, GateOutActivity.class);    		
+	    	}
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+	    	startActivity(intent);
+	    	overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+		} catch (Exception e) {
+			Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+		} finally {
+			spinner.dismiss();
 		}
-		
-    	Intent intent = null;
-    	if(selectedGate == 1) {
-    		intent = new Intent(this, GateInActivity.class);
-    	} else if(selectedGate == 2) {
-    		intent = new Intent(this, GateOutActivity.class);    		
-    	}
-		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-    	startActivity(intent);
-    	overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
 	}
 
 
