@@ -9,6 +9,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.client.ClientHttpRequestFactory;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
@@ -41,6 +44,17 @@ public class CenterService {
 		ip = setting.getString(SettingKey.parkingCenterIp, "");
 		port = setting.getString(SettingKey.parkingCenterPort, "");
 		restTemplate = new RestTemplate();
+		ClientHttpRequestFactory factory = restTemplate.getRequestFactory();
+		
+		if (factory instanceof SimpleClientHttpRequestFactory) {
+			SimpleClientHttpRequestFactory simpleFactory = (SimpleClientHttpRequestFactory)restTemplate.getRequestFactory();
+			simpleFactory.setConnectTimeout(ApplicationScope.getInstance().connTimeout);
+			simpleFactory.setReadTimeout(ApplicationScope.getInstance().readTimeout);
+		} else if (factory instanceof HttpComponentsClientHttpRequestFactory) {
+			HttpComponentsClientHttpRequestFactory httpFactory = (HttpComponentsClientHttpRequestFactory)restTemplate.getRequestFactory();
+			httpFactory.setConnectTimeout(ApplicationScope.getInstance().connTimeout);
+			httpFactory.setReadTimeout(ApplicationScope.getInstance().readTimeout);
+		}
 	}
 	
 	public void login(String username, String password, String uri) {
