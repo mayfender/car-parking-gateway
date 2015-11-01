@@ -19,9 +19,13 @@ public class GateOutActivity extends SherlockActivity {
 	}
 
 	public void onClick(View v) {
-		IntentIntegrator scanIntegrator = new IntentIntegrator(this);
-		scanIntegrator.initiateScan(IntentIntegrator.QR_CODE_TYPES);
-//		scanIntegrator.addExtra("isfullScreen", true);
+		IntentIntegrator integrator = new IntentIntegrator(this);
+        integrator.addExtra("SCAN_WIDTH", 1000);
+        integrator.addExtra("SCAN_HEIGHT", 480);
+        integrator.addExtra("SCAN_MODE", "QR_CODE_MODE,PRODUCT_MODE");
+        //customize the prompt message before scanning
+        integrator.addExtra("PROMPT_MESSAGE", "Scanner Start!");
+        integrator.initiateScan(IntentIntegrator.PRODUCT_CODE_TYPES);
 	}
 
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {

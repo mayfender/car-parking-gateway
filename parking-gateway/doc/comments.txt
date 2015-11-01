@@ -5,3 +5,4 @@ http://www.mysamplecode.com/2011/09/android-barcode-scanner-using-zxing.html
 http://www.mysamplecode.com/2012/09/android-generate-qr-code-using-zxing.html
 http://crunchify.com/java-simple-qr-code-generator-example/
 http://www.lihongfei.com/integrate-zxing-in-android-studio/
+http://michalu.eu/wordpress/scanning-and-generating-barcodes-using-zxing-library-on-android/
