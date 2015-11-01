@@ -13,6 +13,7 @@ import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Window;
 import com.may.ple.parking.gateway.criteria.VehicleSaveCriteriaReq;
 import com.may.ple.parking.gateway.criteria.VehicleSaveCriteriaResp;
+import com.may.ple.parking.gateway.dialog.ProgressDialogSpinner;
 import com.may.ple.parking.gateway.service.CenterService;
 import com.may.ple.parking.gateway.service.RestfulCallback;
 
@@ -20,10 +21,12 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 	private String licenseNo = "";
 	private TextView show;
 	private CenterService service;
+	private ProgressDialogSpinner spinner;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        spinner = new ProgressDialogSpinner(this);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.gate_in);
         
@@ -55,19 +58,27 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 		if(v.getId() == R.id.show) {
 			if(licenseNo == null || licenseNo.trim().length() == 0) return false;
 						
+			show.setBackgroundResource(R.drawable.text_show_sent);
 			VehicleSaveCriteriaReq req = new VehicleSaveCriteriaReq();
 			req.setLicenseNo(licenseNo);
 			service.send(1, req, VehicleSaveCriteriaResp.class, "/restAct/vehicle/saveVehicleParking", HttpMethod.POST);
+			spinner.show();
 		}
-	
-		licenseNo = "";
-		show.setText(licenseNo);			
-		return false;
+		return true;
 	}
 
 	@Override
 	public void onComplete(int id, Object obj) {
-		Toast.makeText(this, "Sent already", Toast.LENGTH_SHORT).show();
+		try {
+			licenseNo = "";
+			show.setText(licenseNo);
+			show.setBackgroundResource(R.drawable.text_show);
+			Toast.makeText(this, "Sent already", Toast.LENGTH_SHORT).show();			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			spinner.dismiss();
+		}
 	}
-	
+
 }

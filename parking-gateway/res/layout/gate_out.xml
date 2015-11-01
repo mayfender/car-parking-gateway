@@ -8,9 +8,22 @@
 			  android:paddingRight="@dimen/activity_horizontal_margin">
 	    
 	    <TextView
+	        android:id="@+id/show_scan"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="Check-Out Gateway" />
+	    
+	    <Button 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="Scan"
+	        android:onClick="onClick" />
+	    
+	    <Button 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="License No."
+	        android:onClick="onClick" />
 	    
 
 </LinearLayout>

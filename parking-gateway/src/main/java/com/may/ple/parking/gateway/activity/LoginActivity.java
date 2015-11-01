@@ -31,6 +31,14 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
         findViewById(R.id.login_button).setOnClickListener(this);
         spinner = new ProgressDialogSpinner(this);
     }
+    
+    // for testing
+    public void onClickTest(View v) {
+    	Intent intent = new Intent(this, GateOutActivity.class);    		
+    	intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+    	startActivity(intent);
+    	overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+    }
    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
