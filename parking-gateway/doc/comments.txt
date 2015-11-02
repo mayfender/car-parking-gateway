@@ -10,3 +10,4 @@ http://michalu.eu/wordpress/scanning-and-generating-barcodes-using-zxing-library
 
 --------: Zbar
 http://www.raviyp.com/android/181-best-bar-code-qr-code-scanner-library-for-using-in-android
+http://kvenkataprasad.blogspot.in/2015/01/bar-code-and-qr-code-scanner-example.html

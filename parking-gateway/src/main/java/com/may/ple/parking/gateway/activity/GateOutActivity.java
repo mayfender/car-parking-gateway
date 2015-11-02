@@ -1,6 +1,5 @@
 package com.may.ple.parking.gateway.activity;
 
-import net.sourceforge.zbar.android.CameraTest.CameraTestActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,8 +16,8 @@ public class GateOutActivity extends SherlockActivity {
 	}
 
 	public void onClick(View v) {
-		Intent i = new Intent(this, CameraTestActivity.class);
-        startActivityForResult(i, 1);
+        Intent intent = new Intent(this, BarcodeScanner.class);
+        startActivity(intent);
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) { 

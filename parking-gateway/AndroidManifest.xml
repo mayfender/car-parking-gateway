@@ -34,6 +34,8 @@
         
         <activity android:name="net.sourceforge.zbar.android.CameraTest.CameraTestActivity" />
         
+        <activity android:name=".BarcodeScanner" />
+        
         <activity android:name="com.may.ple.parking.gateway.setting.PreferenceActivitySetting"
 		    	  android:label="@string/action_settings" />
     </application>
