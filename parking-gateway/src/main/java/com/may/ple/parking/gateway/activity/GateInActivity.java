@@ -2,6 +2,7 @@ package com.may.ple.parking.gateway.activity;
 
 import org.springframework.http.HttpMethod;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnLongClickListener;
@@ -22,6 +23,7 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 	private TextView show;
 	private CenterService service;
 	private ProgressDialogSpinner spinner;
+	private boolean isCheckOut;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,8 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
         Button delete = (Button)findViewById(R.id.delete);
         delete.setOnLongClickListener(this);
         service = new CenterService(this, this);
+        
+        isCheckOut = getIntent().getBooleanExtra("isCheckOut", false);
     }
 	
 	public void onClick(View view) {
@@ -57,8 +61,17 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 		
 		if(v.getId() == R.id.show) {
 			if(licenseNo == null || licenseNo.trim().length() == 0) return false;
-						
+			
 			show.setBackgroundResource(R.drawable.text_show_sent);
+			
+			if(isCheckOut) {
+				Intent returnIntent = new Intent();
+                returnIntent.putExtra("result", licenseNo);
+				setResult(RESULT_OK, returnIntent);
+				finish();
+				return true;
+			}
+			
 			VehicleSaveCriteriaReq req = new VehicleSaveCriteriaReq();
 			req.setLicenseNo(licenseNo);
 			service.send(1, req, VehicleSaveCriteriaResp.class, "/restAct/vehicle/saveVehicleParking", HttpMethod.POST);

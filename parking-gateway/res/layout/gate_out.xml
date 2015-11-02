@@ -14,12 +14,14 @@
 	        android:text="Check-Out Gateway" />
 	    
 	    <Button 
+	        android:id="@+id/scan"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:text="Scan"
 	        android:onClick="onClick" />
 	    
 	    <Button 
+	        android:id="@+id/type"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:text="License No."
