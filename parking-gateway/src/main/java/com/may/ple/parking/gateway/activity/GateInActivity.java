@@ -4,6 +4,7 @@ import org.springframework.http.HttpMethod;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
@@ -24,22 +25,27 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 	private CenterService service;
 	private ProgressDialogSpinner spinner;
 	private boolean isCheckOut;
+	private int lenght = 4;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        isCheckOut = getIntent().getBooleanExtra("isCheckOut", false);
         spinner = new ProgressDialogSpinner(this);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.gate_in);
         
         show = (TextView)findViewById(R.id.show);
         show.setOnLongClickListener(this);
+        if(isCheckOut) {
+        	show.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
+        	lenght = 12;
+        }
         
         Button delete = (Button)findViewById(R.id.delete);
         delete.setOnLongClickListener(this);
         service = new CenterService(this, this);
         
-        isCheckOut = getIntent().getBooleanExtra("isCheckOut", false);
     }
 	
 	public void onClick(View view) {
@@ -48,7 +54,7 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 			if(licenseNo.length() > 0)
 				licenseNo = licenseNo.substring(0, licenseNo.length() - 1);
 		}else{
-			if(licenseNo.length() >= 4) return;
+			if(licenseNo.length() >= lenght) return;
 			
 			licenseNo += ((Button)view).getText();			
 		}
