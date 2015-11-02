@@ -4,7 +4,6 @@ import org.springframework.http.HttpMethod;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
@@ -37,10 +36,6 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
         
         show = (TextView)findViewById(R.id.show);
         show.setOnLongClickListener(this);
-        if(isCheckOut) {
-        	show.setTextSize(TypedValue.COMPLEX_UNIT_SP, 35);
-        	lenght = 12;
-        }
         
         Button delete = (Button)findViewById(R.id.delete);
         delete.setOnLongClickListener(this);
@@ -82,6 +77,9 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 			req.setLicenseNo(licenseNo);
 			service.send(1, req, VehicleSaveCriteriaResp.class, "/restAct/vehicle/saveVehicleParking", HttpMethod.POST);
 			spinner.show();
+		} else {
+			licenseNo = "";
+			show.setText(licenseNo);
 		}
 		return true;
 	}
