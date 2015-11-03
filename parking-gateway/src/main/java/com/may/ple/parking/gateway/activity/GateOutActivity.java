@@ -77,7 +77,6 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 	@Override
 	public void onComplete(int id, Object obj, Object passedParam) {
 		try {
-			
 			VehicleCheckOutCriteriaResp resp = (VehicleCheckOutCriteriaResp)obj;
 			if(resp == null) {
 				Toast.makeText(this, "ระบบทำงานผิดพลาด กรุณาลองอีกครั้ง", Toast.LENGTH_SHORT).show();
@@ -85,9 +84,11 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 			}
 			
 			if(resp.statusCode != 9999) {
-				if(resp.statusCode == 1000) {
+				if(resp.statusCode == 1000)
 					Toast.makeText(this, "ระบบทำงานผิดพลาด", Toast.LENGTH_SHORT).show();
-				}
+				if(resp.statusCode == 3000)
+					Toast.makeText(this, "ไม่พบข้อมูล", Toast.LENGTH_SHORT).show();
+				
 				return;
 			}
 			

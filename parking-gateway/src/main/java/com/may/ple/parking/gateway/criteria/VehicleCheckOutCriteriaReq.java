@@ -5,4 +5,5 @@ public class VehicleCheckOutCriteriaReq {
 	public String licenseNo;
 	public String deviceId;
 	public String gateName;
+	public String remark;
 }
