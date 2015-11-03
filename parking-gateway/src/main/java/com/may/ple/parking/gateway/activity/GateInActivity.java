@@ -85,7 +85,7 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 	}
 
 	@Override
-	public void onComplete(int id, Object obj) {
+	public void onComplete(int id, Object obj, Object passedParam) {
 		try {
 			licenseNo = "";
 			show.setText(licenseNo);

@@ -27,6 +27,7 @@ import com.may.ple.parking.gateway.criteria.LoginCriteriaResp;
 import com.may.ple.parking.gateway.utils.constant.SettingKey;
 
 public class CenterService {
+	public Object passedParam;
 	private Context context;
 	private RestTemplate restTemplate;
 	private RestfulCallback callback;
@@ -87,7 +88,7 @@ public class CenterService {
 			}
 			
 			protected void onPostExecute(LoginCriteriaResp result) {
-				callback.onComplete(0, result);
+				callback.onComplete(0, result, passedParam);
 			};
 			
 		}.execute(username, password);
@@ -136,7 +137,7 @@ public class CenterService {
 			}
 			
 			protected void onPostExecute(T result) {
-				callback.onComplete(id, result);
+				callback.onComplete(id, result, passedParam);
 			};
 			
 		}.execute();

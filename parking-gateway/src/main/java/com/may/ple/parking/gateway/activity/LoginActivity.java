@@ -113,7 +113,7 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
 
 
 	@Override
-	public void onComplete(int id, Object result) {
+	public void onComplete(int id, Object result, Object passedParam) {
 		try {
 			LoginCriteriaResp resp = (LoginCriteriaResp)result;
 			

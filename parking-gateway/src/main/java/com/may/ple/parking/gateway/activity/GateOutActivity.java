@@ -1,5 +1,7 @@
 package com.may.ple.parking.gateway.activity;
 
+import org.springframework.http.HttpMethod;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,11 +10,19 @@ import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.may.ple.parking.gateway.criteria.VehicleGetCriteriaReq;
+import com.may.ple.parking.gateway.criteria.VehicleGetCriteriaResp;
+import com.may.ple.parking.gateway.dialog.ProgressDialogSpinner;
+import com.may.ple.parking.gateway.service.CenterService;
+import com.may.ple.parking.gateway.service.RestfulCallback;
 
-public class GateOutActivity extends SherlockActivity {
+public class GateOutActivity extends SherlockActivity implements RestfulCallback {
 	private int remark;
+	private CenterService service;
+	private ProgressDialogSpinner spinner;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -20,6 +30,8 @@ public class GateOutActivity extends SherlockActivity {
 		setContentView(R.layout.gate_out);
 		View type = findViewById(R.id.type);
 		registerForContextMenu(type);
+		service = new CenterService(this, this);
+		spinner = new ProgressDialogSpinner(this);
 	}
 	
 	@Override
@@ -51,19 +63,51 @@ public class GateOutActivity extends SherlockActivity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) { 
         if (requestCode == 1) {
             if(resultCode == RESULT_OK){
-                String result = data.getStringExtra("result");                
+                String licenseNo = data.getStringExtra("result");                
                 
-                new AlertDialog.Builder(this)
-                .setTitle(getResources().getString(R.string.app_name))
-                .setCancelable(false)
-                .setMessage(result + ", " + remark)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    	
-                    }
-                }).show();
+                VehicleGetCriteriaReq req = new VehicleGetCriteriaReq();
+                req.licenseNo = licenseNo;
+    			service.passedParam = req;
+    			service.send(1, req, VehicleGetCriteriaResp.class, "/restAct/vehicle/getVehicleParking", HttpMethod.POST);
+    			spinner.show();
             }
         } 
     }
+
+	@Override
+	public void onComplete(int id, Object obj, Object passedParam) {
+		try {
+			
+			VehicleGetCriteriaResp resp = (VehicleGetCriteriaResp)obj;
+			if(resp == null) {
+				Toast.makeText(this, "ระบบทำงานผิดพลาด กรุณาลองอีกครั้ง", Toast.LENGTH_SHORT).show();
+				return;
+			}
+			
+			if(resp.statusCode != 9999) {
+				if(resp.statusCode == 1000) {
+					Toast.makeText(this, "ระบบทำงานผิดพลาด", Toast.LENGTH_SHORT).show();
+				}
+				return;
+			}
+			
+			VehicleGetCriteriaReq req = (VehicleGetCriteriaReq)passedParam;
+			
+			new AlertDialog.Builder(this)
+            .setTitle(getResources().getString(R.string.app_name))
+            .setCancelable(false)
+            .setMessage(req.licenseNo + ", " + remark + ", id: " + resp.id)
+            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                	
+                }
+            })
+            .show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			spinner.dismiss();
+		}
+	}
 
 }
