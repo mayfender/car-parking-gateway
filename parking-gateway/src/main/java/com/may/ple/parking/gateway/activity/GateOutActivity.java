@@ -13,8 +13,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
-import com.may.ple.parking.gateway.criteria.VehicleGetCriteriaReq;
-import com.may.ple.parking.gateway.criteria.VehicleGetCriteriaResp;
+import com.may.ple.parking.gateway.criteria.VehicleCheckOutCriteriaReq;
+import com.may.ple.parking.gateway.criteria.VehicleCheckOutCriteriaResp;
 import com.may.ple.parking.gateway.dialog.ProgressDialogSpinner;
 import com.may.ple.parking.gateway.service.CenterService;
 import com.may.ple.parking.gateway.service.RestfulCallback;
@@ -65,10 +65,10 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
             if(resultCode == RESULT_OK){
                 String licenseNo = data.getStringExtra("result");                
                 
-                VehicleGetCriteriaReq req = new VehicleGetCriteriaReq();
+                VehicleCheckOutCriteriaReq req = new VehicleCheckOutCriteriaReq();
                 req.licenseNo = licenseNo;
     			service.passedParam = req;
-    			service.send(1, req, VehicleGetCriteriaResp.class, "/restAct/vehicle/getVehicleParking", HttpMethod.POST);
+    			service.send(1, req, VehicleCheckOutCriteriaResp.class, "/restAct/vehicle/checkOutVehicle", HttpMethod.POST);
     			spinner.show();
             }
         } 
@@ -78,7 +78,7 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 	public void onComplete(int id, Object obj, Object passedParam) {
 		try {
 			
-			VehicleGetCriteriaResp resp = (VehicleGetCriteriaResp)obj;
+			VehicleCheckOutCriteriaResp resp = (VehicleCheckOutCriteriaResp)obj;
 			if(resp == null) {
 				Toast.makeText(this, "ระบบทำงานผิดพลาด กรุณาลองอีกครั้ง", Toast.LENGTH_SHORT).show();
 				return;
@@ -91,12 +91,12 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 				return;
 			}
 			
-			VehicleGetCriteriaReq req = (VehicleGetCriteriaReq)passedParam;
+			VehicleCheckOutCriteriaReq req = (VehicleCheckOutCriteriaReq)passedParam;
 			
 			new AlertDialog.Builder(this)
             .setTitle(getResources().getString(R.string.app_name))
             .setCancelable(false)
-            .setMessage(req.licenseNo + ", " + remark + ", id: " + resp.id)
+            .setMessage(req.licenseNo + ", " + remark + ", id: " + resp.vehicleParking.id)
             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                 	
