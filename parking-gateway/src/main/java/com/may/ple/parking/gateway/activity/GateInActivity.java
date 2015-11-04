@@ -3,7 +3,9 @@ package com.may.ple.parking.gateway.activity;
 import org.springframework.http.HttpMethod;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
@@ -17,6 +19,7 @@ import com.may.ple.parking.gateway.criteria.VehicleSaveCriteriaResp;
 import com.may.ple.parking.gateway.dialog.ProgressDialogSpinner;
 import com.may.ple.parking.gateway.service.CenterService;
 import com.may.ple.parking.gateway.service.RestfulCallback;
+import com.may.ple.parking.gateway.utils.constant.SettingKey;
 
 public class GateInActivity extends SherlockActivity implements OnLongClickListener, RestfulCallback {
 	private String licenseNo = "";
@@ -25,6 +28,7 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 	private ProgressDialogSpinner spinner;
 	private boolean isCheckOut;
 	private int lenght = 4;
+	private String gateName;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,7 +44,8 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
         Button delete = (Button)findViewById(R.id.delete);
         delete.setOnLongClickListener(this);
         service = new CenterService(this, this);
-        
+        SharedPreferences setting = PreferenceManager.getDefaultSharedPreferences(this);
+        gateName = setting.getString(SettingKey.gateName, "");
     }
 	
 	public void onClick(View view) {
@@ -74,7 +79,10 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 			}
 			
 			VehicleSaveCriteriaReq req = new VehicleSaveCriteriaReq();
-			req.setLicenseNo(licenseNo);
+			req.licenseNo = licenseNo;
+			req.deviceId = ApplicationScope.getInstance().deviceId;
+			req.gateName = gateName;
+			
 			service.send(1, req, VehicleSaveCriteriaResp.class, "/restAct/vehicle/saveVehicleParking", HttpMethod.POST);
 			spinner.show();
 		} else {

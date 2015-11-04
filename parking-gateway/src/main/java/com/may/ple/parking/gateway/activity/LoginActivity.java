@@ -3,6 +3,7 @@ package com.may.ple.parking.gateway.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -133,6 +134,9 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
 				
 				return;
 			}
+			
+			TelephonyManager telMrg = (TelephonyManager)this.getSystemService(Context.TELEPHONY_SERVICE);
+			ApplicationScope.getInstance().deviceId = telMrg.getDeviceId();
 			
 	    	Intent intent = null;
 	    	if(selectedGate == 1) {

@@ -5,7 +5,9 @@ import org.springframework.http.HttpMethod;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
@@ -18,11 +20,13 @@ import com.may.ple.parking.gateway.criteria.VehicleCheckOutCriteriaResp;
 import com.may.ple.parking.gateway.dialog.ProgressDialogSpinner;
 import com.may.ple.parking.gateway.service.CenterService;
 import com.may.ple.parking.gateway.service.RestfulCallback;
+import com.may.ple.parking.gateway.utils.constant.SettingKey;
 
 public class GateOutActivity extends SherlockActivity implements RestfulCallback {
-	private int remark;
+	private int reasonNoScan;
 	private CenterService service;
 	private ProgressDialogSpinner spinner;
+	private String gateName;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,9 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 		registerForContextMenu(type);
 		service = new CenterService(this, this);
 		spinner = new ProgressDialogSpinner(this);
+		
+		SharedPreferences setting = PreferenceManager.getDefaultSharedPreferences(this);
+        gateName = setting.getString(SettingKey.gateName, "");
 	}
 	
 	@Override
@@ -44,7 +51,7 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 	
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {	
-		remark = item.getItemId();
+		reasonNoScan = item.getItemId();
 		Intent intent = new Intent(this, GateInActivity.class);
 		intent.putExtra("isCheckOut", true);
 		startActivityForResult(intent, 1);
@@ -67,6 +74,10 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
                 
                 VehicleCheckOutCriteriaReq req = new VehicleCheckOutCriteriaReq();
                 req.licenseNo = licenseNo;
+                req.reasonNoScan = reasonNoScan;
+                req.deviceId = ApplicationScope.getInstance().deviceId;
+                req.gateName = gateName;
+                
     			service.passedParam = req;
     			service.send(1, req, VehicleCheckOutCriteriaResp.class, "/restAct/vehicle/checkOutVehicle", HttpMethod.POST);
     			spinner.show();
@@ -97,7 +108,7 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 			new AlertDialog.Builder(this)
             .setTitle(getResources().getString(R.string.app_name))
             .setCancelable(false)
-            .setMessage(req.licenseNo + ", " + remark + ", id: " + resp.vehicleParking.id)
+            .setMessage(req.licenseNo + ", " + reasonNoScan + ", id: " + resp.vehicleParking.id)
             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                 	

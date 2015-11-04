@@ -7,6 +7,7 @@ public class ApplicationScope extends Application {
 	public String jsessionid;
 	public int connTimeout = 10000;
 	public int readTimeout = 10000;
+	public String deviceId;
 	
 	@Override
 	public void onCreate() {
