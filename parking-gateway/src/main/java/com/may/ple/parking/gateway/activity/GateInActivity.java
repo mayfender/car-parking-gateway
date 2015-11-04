@@ -45,7 +45,7 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
         delete.setOnLongClickListener(this);
         service = new CenterService(this, this);
         SharedPreferences setting = PreferenceManager.getDefaultSharedPreferences(this);
-        gateName = setting.getString(SettingKey.gateName, "");
+        gateName = setting.getString(SettingKey.gateName, null);
     }
 	
 	public void onClick(View view) {

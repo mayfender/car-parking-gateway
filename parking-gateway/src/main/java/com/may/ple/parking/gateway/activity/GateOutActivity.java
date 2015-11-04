@@ -38,7 +38,7 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 		spinner = new ProgressDialogSpinner(this);
 		
 		SharedPreferences setting = PreferenceManager.getDefaultSharedPreferences(this);
-        gateName = setting.getString(SettingKey.gateName, "");
+        gateName = setting.getString(SettingKey.gateName, null);
 	}
 	
 	@Override
