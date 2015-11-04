@@ -108,7 +108,7 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 			new AlertDialog.Builder(this)
             .setTitle(getResources().getString(R.string.app_name))
             .setCancelable(false)
-            .setMessage(req.licenseNo + ", " + reasonNoScan + ", id: " + resp.vehicleParking.id)
+            .setMessage(req.licenseNo + ", " + reasonNoScan + ", id: " + String.format("%011d", resp.vehicleParking.id))
             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                 	

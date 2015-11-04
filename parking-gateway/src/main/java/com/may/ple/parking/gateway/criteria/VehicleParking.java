@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Map;
 
 public class VehicleParking {
-	public String id;
+	public Long id;
 	public Date inDateTime;
 	public Date outDateTime;
 	public Integer price;

@@ -12,6 +12,8 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:padding="30dp"
+	        android:textSize="30sp"
+	        android:textStyle="bold"
 	        android:text="สแกน"
 	        android:onClick="onClick" />
 	    
@@ -19,7 +21,10 @@
 	        android:id="@+id/type"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dp"
 	        android:padding="30dp"
+	        android:textSize="30sp"
+	        android:textStyle="bold"
 	        android:text="พิมพ์"
 	        android:onClick="onClick" />
 	    
@@ -27,8 +32,10 @@
 	        android:id="@+id/lastCheckOut"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dp"
 	        android:padding="30dp"
-	        android:layout_marginTop="30dp"
+	        android:textSize="30sp"
+	        android:textStyle="bold"
 	        android:text="รายการล่าสุด"
 	        android:onClick="onClick" />
 	    
