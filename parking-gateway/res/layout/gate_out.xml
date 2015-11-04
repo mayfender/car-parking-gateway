@@ -24,7 +24,7 @@
 	        android:onClick="onClick" />
 	    
 	    <Button 
-	        android:id="@+id/lastItem"
+	        android:id="@+id/lastCheckOut"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:padding="30dp"
