@@ -1,6 +1,8 @@
 package com.may.ple.parking.gateway.activity;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -35,10 +37,18 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
     
     // for testing
     public void onClickTest(View v) {
-    	Intent intent = new Intent(this, GateOutActivity.class);    		
-    	intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
-    	startActivity(intent);
-    	overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
+    	LayoutInflater inflater = getLayoutInflater();
+		
+		new AlertDialog.Builder(this)
+//        .setTitle(getResources().getString(R.string.app_name))
+        .setCancelable(false)
+        .setView(inflater.inflate(R.layout.alert_dialog, null))
+        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            	
+            }
+        })
+        .show();
     }
    
     @Override

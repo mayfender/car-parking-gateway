@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -104,10 +105,12 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 			}
 			
 			VehicleCheckOutCriteriaReq req = (VehicleCheckOutCriteriaReq)passedParam;
+			LayoutInflater inflater = getLayoutInflater();
 			
 			new AlertDialog.Builder(this)
             .setTitle(getResources().getString(R.string.app_name))
             .setCancelable(false)
+            .setView(inflater.inflate(R.layout.alert_dialog, null))
             .setMessage(req.licenseNo + ", " + reasonNoScan + ", id: " + String.format("%011d", resp.vehicleParking.id))
             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
@@ -115,6 +118,7 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
                 }
             })
             .show();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
