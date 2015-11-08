@@ -40,9 +40,8 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
     	LayoutInflater inflater = getLayoutInflater();
 		
 		new AlertDialog.Builder(this)
-//        .setTitle(getResources().getString(R.string.app_name))
         .setCancelable(false)
-        .setView(inflater.inflate(R.layout.alert_dialog, null))
+        .setView(inflater.inflate(R.layout.alert_dialog_checkout, null))
         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
             	

@@ -1,5 +1,7 @@
 package com.may.ple.parking.gateway.activity;
 
+import java.util.Map;
+
 import org.springframework.http.HttpMethod;
 
 import android.app.AlertDialog;
@@ -13,6 +15,7 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
@@ -28,6 +31,7 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 	private CenterService service;
 	private ProgressDialogSpinner spinner;
 	private String gateName;
+	private AlertDialog dialog;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,8 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 			startActivity(intent);
 		} else if(v.getId() == R.id.type) {
 			openContextMenu(v);
+		} else if(v.getId() == R.id.lastCheckOut && dialog != null) {
+			dialog.show();
 		}
 	}
 
@@ -105,19 +111,26 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 			}
 			
 			VehicleCheckOutCriteriaReq req = (VehicleCheckOutCriteriaReq)passedParam;
-			LayoutInflater inflater = getLayoutInflater();
+			Map<String, Long> diffMap = resp.vehicleParking.dateTimeDiffMap;
+			String dateFormat = "%1$td-%1$tm-%1$tY %1$tH:%1$tM:%1$tS";
 			
-			new AlertDialog.Builder(this)
-            .setTitle(getResources().getString(R.string.app_name))
-            .setCancelable(false)
-            .setView(inflater.inflate(R.layout.alert_dialog, null))
-            .setMessage(req.licenseNo + ", " + reasonNoScan + ", id: " + String.format("%011d", resp.vehicleParking.id))
-            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                	
-                }
-            })
-            .show();
+			LayoutInflater inflater = getLayoutInflater();
+			View view = inflater.inflate(R.layout.alert_dialog_checkout, null);
+			((TextView)view.findViewById(R.id.licenseNo)).setText(" : " + req.licenseNo);
+			((TextView)view.findViewById(R.id.dateIn)).setText(" : " + String.format(dateFormat, resp.vehicleParking.inDateTime));
+			((TextView)view.findViewById(R.id.dateOut)).setText(" : " + String.format(dateFormat, resp.vehicleParking.outDateTime));
+			((TextView)view.findViewById(R.id.parkingTime)).setText(" : " + diffMap.get("hours") + ":" +diffMap.get("minutes") + " Hrs:Mins");
+			((TextView)view.findViewById(R.id.price)).setText("( Price " + String.valueOf(resp.vehicleParking.price) + " Baht )");
+			
+			dialog = new AlertDialog.Builder(this)
+	        .setCancelable(false)
+	        .setView(view)
+	        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+	            public void onClick(DialogInterface dialog, int which) {
+	            	
+	            }
+	        })
+	        .show();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
