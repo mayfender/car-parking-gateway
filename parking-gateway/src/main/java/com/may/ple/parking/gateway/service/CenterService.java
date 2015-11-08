@@ -128,7 +128,7 @@ public class CenterService {
 				} catch (Exception e) {
 					try {
 						T t = respType.newInstance();
-						t.statusCode = 1000;						
+						t.statusCode = 1001;						
 						return t;
 					} catch (Exception e2) {
 						return null;
