@@ -16,7 +16,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.may.ple.parking.gateway.criteria.VehicleCheckOutCriteriaReq;
@@ -25,6 +24,7 @@ import com.may.ple.parking.gateway.dialog.ProgressDialogSpinner;
 import com.may.ple.parking.gateway.service.CenterService;
 import com.may.ple.parking.gateway.service.RestfulCallback;
 import com.may.ple.parking.gateway.utils.constant.SettingKey;
+import com.may.ple.parking.gateway.utils.handler.ErrorHandler;
 
 public class GateOutActivity extends SherlockActivity implements RestfulCallback {
 	private int reasonNoScan;
@@ -96,17 +96,9 @@ public class GateOutActivity extends SherlockActivity implements RestfulCallback
 	public void onComplete(int id, Object obj, Object passedParam) {
 		try {
 			VehicleCheckOutCriteriaResp resp = (VehicleCheckOutCriteriaResp)obj;
-			if(resp == null) {
-				Toast.makeText(this, "ระบบทำงานผิดพลาด กรุณาลองอีกครั้ง", Toast.LENGTH_SHORT).show();
-				return;
-			}
 			
 			if(resp.statusCode != 9999) {
-				if(resp.statusCode == 1000)
-					Toast.makeText(this, "ระบบทำงานผิดพลาด", Toast.LENGTH_SHORT).show();
-				if(resp.statusCode == 3000)
-					Toast.makeText(this, "ไม่พบข้อมูล", Toast.LENGTH_SHORT).show();
-				
+				new ErrorHandler(this).handler(resp);
 				return;
 			}
 			

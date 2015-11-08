@@ -22,6 +22,7 @@ import com.may.ple.parking.gateway.dialog.ProgressDialogSpinner;
 import com.may.ple.parking.gateway.service.CenterService;
 import com.may.ple.parking.gateway.service.RestfulCallback;
 import com.may.ple.parking.gateway.setting.PreferenceActivitySetting;
+import com.may.ple.parking.gateway.utils.handler.ErrorHandler;
 
 public class LoginActivity extends SherlockActivity implements OnClickListener, RestfulCallback {
 	private Integer selectedGate;
@@ -127,20 +128,8 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
 		try {
 			LoginCriteriaResp resp = (LoginCriteriaResp)result;
 			
-			if(resp == null) {
-				Toast.makeText(this, "ระบบทำงานผิดพลาด กรุณาลองอีกครั้ง", Toast.LENGTH_SHORT).show();
-				return;
-			}
-			else if(resp.statusCode != 9999 || !resp.authenticated) {
-				if(resp.statusCode == 5000) {
-					Toast.makeText(this, "ไม่สามารถเชื่อมต่อกับข้อมูลกลางได้", Toast.LENGTH_SHORT).show();
-				}
-				else if(resp.statusCode == 401) {
-					Toast.makeText(this, "ข้อมูลไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง", Toast.LENGTH_SHORT).show();				
-				}else{
-					Toast.makeText(this, "Login ไม่สำเร็จ", Toast.LENGTH_SHORT).show();
-				}
-				
+			if(resp.statusCode != 9999 || !resp.authenticated) {
+				new ErrorHandler(this).handler(resp);
 				return;
 			}
 			
@@ -153,7 +142,7 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
 	    	} else if(selectedGate == 2) {
 	    		intent = new Intent(this, GateOutActivity.class);    		
 	    	}
-			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 	    	startActivity(intent);
 	    	overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_left);
 		} catch (Exception e) {

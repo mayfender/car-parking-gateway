@@ -20,6 +20,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 import com.may.ple.parking.gateway.activity.ApplicationScope;
 import com.may.ple.parking.gateway.criteria.CommonCriteriaResp;
@@ -127,9 +128,8 @@ public class CenterService {
 					}
 				} catch (Exception e) {
 					try {
-						T t = respType.newInstance();
-						t.statusCode = 1001;						
-						return t;
+						Toast.makeText(context, "Gateway App Error: " +e.getMessage(), Toast.LENGTH_SHORT).show();
+						return null;
 					} catch (Exception e2) {
 						return null;
 					}
