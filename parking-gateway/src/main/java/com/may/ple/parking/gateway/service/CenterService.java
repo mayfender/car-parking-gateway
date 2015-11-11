@@ -34,6 +34,7 @@ public class CenterService {
 	private RestfulCallback callback;
 	private String ip;
 	private String port;
+	private String contextUrl;
 	
 	public CenterService(Context context, RestfulCallback callback) {
 		this.context = context;	
@@ -47,6 +48,7 @@ public class CenterService {
 		port = setting.getString(SettingKey.parkingCenterPort, "");
 		restTemplate = new RestTemplate();
 		ClientHttpRequestFactory factory = restTemplate.getRequestFactory();
+		contextUrl = "http://" + ip + ":" + port + "/backend";
 		
 		if (factory instanceof SimpleClientHttpRequestFactory) {
 			SimpleClientHttpRequestFactory simpleFactory = (SimpleClientHttpRequestFactory)restTemplate.getRequestFactory();
@@ -60,7 +62,7 @@ public class CenterService {
 	}
 	
 	public void login(String username, String password, String uri) {
-		final String url = "http://" + ip + ":" + port + "/backend" + uri;
+		final String url = this.contextUrl + uri;
 		
 		new AsyncTask<String, Void, LoginCriteriaResp>() {
 
@@ -96,7 +98,7 @@ public class CenterService {
 	}
 	
 	public <R, T extends CommonCriteriaResp> void send(final int id, final R reqType, final Class<T> respType, String uri, final HttpMethod method) {
-		final String url = "http://" + ip + ":" + port + "/parking-center" + uri;
+		final String url = this.contextUrl + uri;
 		
 		new AsyncTask<String, Void, T>() {
 
