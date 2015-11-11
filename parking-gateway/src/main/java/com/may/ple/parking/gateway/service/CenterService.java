@@ -60,7 +60,7 @@ public class CenterService {
 	}
 	
 	public void login(String username, String password, String uri) {
-		final String url = "http://" + ip + ":" + port + "/parking-center" + uri;
+		final String url = "http://" + ip + ":" + port + "/backend" + uri;
 		
 		new AsyncTask<String, Void, LoginCriteriaResp>() {
 

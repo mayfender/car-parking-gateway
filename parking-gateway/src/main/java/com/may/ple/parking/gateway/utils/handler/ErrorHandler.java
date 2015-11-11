@@ -29,6 +29,8 @@ public class ErrorHandler {
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 		    	context.startActivity(intent);
 			}
+		}else if(resp.statusCode == 404) {
+			Toast.makeText(context, "Not Found Server", Toast.LENGTH_SHORT).show();
 		}else if(resp.statusCode == 1000) {
 			Toast.makeText(context, "Parking Center Error", Toast.LENGTH_SHORT).show();
 		}else if(resp.statusCode == 3000) {
