@@ -4,6 +4,7 @@ import org.springframework.http.HttpMethod;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -70,6 +71,7 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 			if(licenseNo == null || licenseNo.trim().length() == 0) return false;
 			
 			show.setBackgroundResource(R.drawable.text_show_sent);
+			show.setTextColor(Color.parseColor("#000000"));
 			
 			if(isCheckOut) {
 				Intent returnIntent = new Intent();
@@ -106,6 +108,7 @@ public class GateInActivity extends SherlockActivity implements OnLongClickListe
 			licenseNo = "";
 			show.setText(licenseNo);
 			show.setBackgroundResource(R.drawable.text_show);
+			show.setTextColor(Color.parseColor("#FFFFFF"));
 			Toast.makeText(this, "Sent already", Toast.LENGTH_SHORT).show();			
 		} catch (Exception e) {
 			e.printStackTrace();

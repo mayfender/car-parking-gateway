@@ -14,6 +14,7 @@
 	        android:padding="30dp"
 	        android:textSize="30sp"
 	        android:textStyle="bold"
+	        android:textColor="#FFFFFF"
 	        android:text="สแกน"
 	        android:onClick="onClick" />
 	    
@@ -25,6 +26,7 @@
 	        android:padding="30dp"
 	        android:textSize="30sp"
 	        android:textStyle="bold"
+	        android:textColor="#FFFFFF"
 	        android:text="พิมพ์"
 	        android:onClick="onClick" />
 	    
@@ -36,6 +38,7 @@
 	        android:padding="30dp"
 	        android:textSize="30sp"
 	        android:textStyle="bold"
+	        android:textColor="#FFFFFF"
 	        android:text="รายการล่าสุด"
 	        android:onClick="onClick" />
 	    

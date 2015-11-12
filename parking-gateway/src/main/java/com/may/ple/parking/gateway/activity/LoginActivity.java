@@ -1,8 +1,6 @@
 package com.may.ple.parking.gateway.activity;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -35,21 +33,6 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
         findViewById(R.id.login_button).setOnClickListener(this);
         spinner = new ProgressDialogSpinner(this);
     }
-    
-    // for testing
-    public void onClickTest(View v) {
-    	LayoutInflater inflater = getLayoutInflater();
-		
-		new AlertDialog.Builder(this)
-        .setCancelable(false)
-        .setView(inflater.inflate(R.layout.alert_dialog_checkout, null))
-        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-            	
-            }
-        })
-        .show();
-    }
    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,7 +46,7 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
 	public void onClick(View v) {
     	
     	if(selectedGate == null) {
-    		Toast.makeText(this, "กรุณาเลือก Gate", Toast.LENGTH_SHORT).show();
+    		Toast.makeText(this, getString(R.string.please_select_gate), Toast.LENGTH_SHORT).show();
     		return;
     	}
     	
@@ -71,11 +54,11 @@ public class LoginActivity extends SherlockActivity implements OnClickListener, 
     	String password = ((EditText)findViewById(R.id.password)).getText().toString().trim();
     	
     	if(username == null || username.isEmpty()) {
-    		Toast.makeText(this, "กรุณากรอก ชื่อผู้ใช้", Toast.LENGTH_SHORT).show();    		
+    		Toast.makeText(this, getString(R.string.please_fill_username), Toast.LENGTH_SHORT).show();    		
     		return;
     	}
     	if(password == null || password.isEmpty()) {
-    		Toast.makeText(this, "กรุณากรอก รหัสผ่าน", Toast.LENGTH_SHORT).show();
+    		Toast.makeText(this, getString(R.string.please_fill_password), Toast.LENGTH_SHORT).show();
     		return;    		
     	}
     	

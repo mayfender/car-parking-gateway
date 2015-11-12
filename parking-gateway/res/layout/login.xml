@@ -38,23 +38,21 @@
 		    <RadioButton android:id="@+id/checkIn"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="รถเข้า"
+		        android:text="@string/login_radio_car_in"
+		        android:textColor="#FFFFFF"
 		        android:onClick="onRadioButtonClicked"/>
 		    <RadioButton android:id="@+id/checkOut"
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-		        android:text="รถออก"
+		        android:text="@string/login_radio_car_out"
+		        android:textColor="#FFFFFF"
 		        android:onClick="onRadioButtonClicked"/>
 		</RadioGroup>
     
 	    <Button android:layout_width="match_parent"
 	        	android:layout_height="wrap_content"
 	        	android:id="@+id/login_button"
+	        	android:textColor="#FFFFFF"
 	        	android:text="@string/login_button" />
-	    
-	    <Button android:layout_width="match_parent"
-	        	android:layout_height="wrap_content"
-	        	android:onClick="onClickTest"
-	        	android:text="test" />
 
 </LinearLayout>
